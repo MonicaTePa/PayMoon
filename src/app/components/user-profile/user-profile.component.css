@@ -1,0 +1,63 @@
+header{
+    top: 0;
+    position: fixed;
+}
+
+@media only screen and (max-width: 500px){
+    .user-profile-container{
+        height: 100vh;
+        width: 100vw;
+        padding-top: 15vh;  
+        display: flex;
+        justify-content: center;
+        background-image: url('../../../assets/img/user-desktop/mobile-background.png'); 
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;        
+        font-family:  'Raleway', sans-serif;    
+        text-align: center;  
+        
+    }
+
+    .user-profile-container .user-profile{
+        width: 90%;
+        background-color: #ffffff;
+        height: 70vh;
+        border-radius: 10px;
+        padding-top: 10%;           
+        box-shadow: 0 0 20px #c182e1;  
+        display: flex;
+        flex-direction: column;
+        align-items: center;  
+    }
+
+    .user-profile-container .user-profile .user-info-container{
+        width: 95%;
+        background-color: #ffffff;
+        height: auto;
+        border-bottom: 2px solid #cbb1da;
+        padding-bottom: 7%;    
+    }
+
+    .user-profile-container .user-profile .user-info-container .user-info-container-text{
+
+        margin-bottom: 0.5em;
+    }
+
+    .user-profile-container .user-profile .user-info-container .user-info-btn{
+        width: 90%;
+        border: none;
+        background-color: #5786ed;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        color: white;
+        font-family: 'Raleway', sans-serif;
+        font-weight: bolder;        
+        cursor: pointer
+    }
+
+    .user-profile-container .user-profile .user-info-container .user-info-btn:hover{
+        border-radius: 10px;
+    }
+        
+}
