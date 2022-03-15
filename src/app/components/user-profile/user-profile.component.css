@@ -20,7 +20,7 @@ header{
     }
 
     .user-profile-container .user-profile{
-        width: 90%;
+        width: 80%;
         background-color: #ffffff;
         height: 70vh;
         border-radius: 10px;
@@ -28,7 +28,7 @@ header{
         box-shadow: 0 0 20px #c182e1;  
         display: flex;
         flex-direction: column;
-        align-items: center;  
+        align-items: center;         
     }
 
     .user-profile-container .user-profile .user-info-container{
@@ -40,21 +40,101 @@ header{
     }
 
     .user-profile-container .user-profile .user-info-container .user-info-container-text{
-
         margin-bottom: 0.5em;
+    }
+
+    .user-profile-container .user-profile .user-info-container .user-info-container-text-p{
+        font-size: x-small;
     }
 
     .user-profile-container .user-profile .user-info-container .user-info-btn{
         width: 90%;
         border: none;
         background-color: #5786ed;
-        padding-top: 0.5em;
-        padding-bottom: 0.5em;
+        padding-top: 0.7em;
+        padding-bottom: 0.7em;
         color: white;
         font-family: 'Raleway', sans-serif;
         font-weight: bolder;        
         cursor: pointer
     }
+
+    .user-profile-container .user-profile .user-options-btn-container{
+        width:95%; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;     
+        height: auto;
+        margin-top:7%
+    }
+
+    .user-profile-container .user-profile .user-options-btn-container .user-option-btn{
+        width:90%;     
+        border:none;  
+        font-family: 'Raleway', sans-serif;
+        height: 6vh;  
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;  
+        padding-left: 1em;         
+        padding-right: 1em;   
+        color: #5585ed; 
+        font-weight: bold;
+        font-size: small;
+        text-align: justify;
+        background-color: white;
+    }
+
+    .user-profile-container .user-profile .user-options-btn-container .user-option-btn span{
+        height: 2vh;
+        width: 2vh;
+        background-image: url('../../../assets/img/user-profile/right-arrow.png');
+        background-size: cover;        
+    }
+
+    .user-profile-container .user-profile .user-options-btn-container .user-option-btn .card-option-icon{  
+        height: 2.5vh;
+        width: 2.5vh;     
+        background-image: url('../../../assets/img/user-profile/credit-card.png');               
+    }
+
+    .user-profile-container .user-profile .user-options-btn-container .user-option-btn .pocket-option-icon{  
+        height: 2.5vh;
+        width: 2.5vh;     
+        background-image: url('../../../assets/img/user-profile/wallet.png');               
+    }
+
+    .user-profile-container .user-profile .user-options-btn-container .user-option-btn .history-option-icon{  
+        height: 2.5vh;
+        width: 2.5vh;     
+        background-image: url('../../../assets/img/user-profile/history.png');               
+    }
+
+    .user-profile-container .user-profile .user-options-btn-container .user-option-btn .recieve-option-icon{  
+        height: 2.5vh;
+        width: 2.5vh;     
+        background-image: url('../../../assets/img/user-profile/reciever.png');               
+    }
+
+    .user-profile-container .user-profile .user-options-btn-container .user-option-btn .payment-option-icon{  
+        height: 2.5vh;
+        width: 2.5vh;     
+        background-image: url('../../../assets/img/user-profile/operation.png');               
+    }
+
+    .user-profile-container .user-profile .user-options-btn-container .user-option-btn .delete-option-icon{  
+        height: 2.5vh;
+        width: 2.5vh;     
+        background-image: url('../../../assets/img/user-profile/xmark.png');               
+    }
+
+
+
+
+  
+    
     
         
 }
