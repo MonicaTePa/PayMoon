@@ -21,12 +21,7 @@ header{
         display: flex;
         flex-direction: column;
         justify-content: center;
-<<<<<<< HEAD
-        align-items: center; 
-        background-image: url('../../../assets/img/user-desktop/mobile-background-1.png'); 
-=======
         align-items: center;         
->>>>>>> development
         background-size: cover;   
     }
     
