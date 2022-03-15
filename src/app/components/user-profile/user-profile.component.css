@@ -55,9 +55,6 @@ header{
         font-weight: bolder;        
         cursor: pointer
     }
-
-    .user-profile-container .user-profile .user-info-container .user-info-btn:hover{
-        border-radius: 10px;
-    }
+    
         
 }
