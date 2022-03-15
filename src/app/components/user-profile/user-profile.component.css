@@ -3,32 +3,96 @@ header{
     position: fixed;
 }
 
-@media only screen and (max-width: 500px){
+
+.user-profile-container .user-profile .user-options-btn-container .user-option-btn span{
+    height: 2vh;
+    width: 2vh;
+    background-image: url('../../../assets/img/user-profile/right-arrow.png');
+    background-size: cover;        
+}
+
+.user-profile-container .user-profile .user-options-btn-container .user-option-btn .card-option-icon{  
+    height: 2.5vh;
+    width: 2.5vh;     
+    background-image: url('../../../assets/img/user-profile/credit-card.png');               
+}
+
+.user-profile-container .user-profile .user-options-btn-container .user-option-btn .pocket-option-icon{  
+    height: 2.5vh;
+    width: 2.5vh;     
+    background-image: url('../../../assets/img/user-profile/wallet.png');               
+}
+
+.user-profile-container .user-profile .user-options-btn-container .user-option-btn .history-option-icon{  
+    height: 2.5vh;
+    width: 2.5vh;     
+    background-image: url('../../../assets/img/user-profile/history.png');               
+}
+
+.user-profile-container .user-profile .user-options-btn-container .user-option-btn .recieve-option-icon{  
+    height: 2.5vh;
+    width: 2.5vh;     
+    background-image: url('../../../assets/img/user-profile/reciever.png');               
+}
+
+.user-profile-container .user-profile .user-options-btn-container .user-option-btn .payment-option-icon{  
+    height: 2.5vh;
+    width: 2.5vh;     
+    background-image: url('../../../assets/img/user-profile/operation.png');               
+}
+
+.user-profile-container .user-profile .user-options-btn-container .user-option-btn .delete-option-icon{  
+    height: 2.5vh;
+    width: 2.5vh;     
+    background-image: url('../../../assets/img/user-profile/xmark.png');               
+}
+
+.user-profile-container .user-profile .user-info-container .user-info-container-text{
+    margin-bottom: 0.5em;
+}
+
+.user-profile-container .user-profile .user-info-container .user-info-container-text-p{
+    font-size: x-small;
+}
+
+@media only screen and (max-width: 760px){
+
+    .background{
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        z-index: -1;
+        background-color: #758dec;
+        background-image: url('../../../assets/img/user-desktop/mobile-background.png')
+    }
+
     .user-profile-container{
         height: 100vh;
-        width: 100vw;
+        width: 100vw;        
         padding-top: 15vh;  
         display: flex;
-        justify-content: center;
-        background-image: url('../../../assets/img/user-desktop/mobile-background.png'); 
+        justify-content: center;        
         background-position: center;
-        background-repeat: no-repeat;
+        background-repeat: repeat;       
         background-size: cover;        
         font-family:  'Raleway', sans-serif;    
-        text-align: center;  
-        
+        text-align: center;             
     }
 
     .user-profile-container .user-profile{
         width: 80%;
-        background-color: #ffffff;
-        height: 70vh;
-        border-radius: 10px;
-        padding-top: 10%;           
+        max-width: 350px;
+        min-width: 250px;
+        background-color: #ffffff;       
+        padding-top: 3%;
+        height: 65vh;
+        min-height: 410px;
+        border-radius: 10px;         
         box-shadow: 0 0 20px #c182e1;  
         display: flex;
         flex-direction: column;
-        align-items: center;         
+        align-items: center;  
+        justify-content: flex-start;        
     }
 
     .user-profile-container .user-profile .user-info-container{
@@ -37,15 +101,7 @@ header{
         height: auto;
         border-bottom: 2px solid #cbb1da;
         padding-bottom: 7%;    
-    }
-
-    .user-profile-container .user-profile .user-info-container .user-info-container-text{
-        margin-bottom: 0.5em;
-    }
-
-    .user-profile-container .user-profile .user-info-container .user-info-container-text-p{
-        font-size: x-small;
-    }
+    }   
 
     .user-profile-container .user-profile .user-info-container .user-info-btn{
         width: 90%;
@@ -66,7 +122,7 @@ header{
         align-items: center;
         justify-content: flex-start;     
         height: auto;
-        margin-top:7%
+        margin-top:3%
     }
 
     .user-profile-container .user-profile .user-options-btn-container .user-option-btn{
@@ -85,56 +141,94 @@ header{
         font-size: small;
         text-align: justify;
         background-color: white;
+    }    
+}
+
+@media only screen and (min-width: 761px){
+
+    .background{
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        z-index: -1;  
+        background-color: 758dec;
+        background-image: url('../../../assets/img/user-desktop/desktop-background.png');
     }
 
-    .user-profile-container .user-profile .user-options-btn-container .user-option-btn span{
-        height: 2vh;
-        width: 2vh;
-        background-image: url('../../../assets/img/user-profile/right-arrow.png');
+    .user-profile-container{
+        height: 100vh;
+        width: 100vw;
+        padding-top: 15vh;  
+        display: flex;
+        justify-content: center;      
+        background-position: center;
+        background-repeat: repeat;       
         background-size: cover;        
+        font-family:  'Raleway', sans-serif;    
+        text-align: center;             
     }
 
-    .user-profile-container .user-profile .user-options-btn-container .user-option-btn .card-option-icon{  
-        height: 2.5vh;
-        width: 2.5vh;     
-        background-image: url('../../../assets/img/user-profile/credit-card.png');               
+    .user-profile-container .user-profile{
+        width: 80%;     
+        background-color: #ffffff;       
+        padding-top: 3%;
+        height: 65vh;    
+        min-height: 280px; 
+        max-width: 650px;   
+        border-radius: 10px;         
+        box-shadow: 0 0 20px #c182e1;  
+        display: flex;
+        flex-direction: column;
+        align-items: center;  
+        justify-content: flex-start;        
     }
 
-    .user-profile-container .user-profile .user-options-btn-container .user-option-btn .pocket-option-icon{  
-        height: 2.5vh;
-        width: 2.5vh;     
-        background-image: url('../../../assets/img/user-profile/wallet.png');               
+    .user-profile-container .user-profile .user-info-container{
+        width: 90%;
+        background-color: #ffffff;
+        height: auto;
+        border-bottom: 2px solid #cbb1da;
+        padding-bottom: 3%;    
+    }
+       
+    .user-profile-container .user-profile .user-info-container .user-info-btn{
+        width: 100%;
+        border: none;
+        background-color: #5786ed;
+        padding-top: 0.7em;
+        padding-bottom: 0.7em;
+        color: white;
+        font-family: 'Raleway', sans-serif;
+        font-weight: bolder;        
+        cursor: pointer
     }
 
-    .user-profile-container .user-profile .user-options-btn-container .user-option-btn .history-option-icon{  
-        height: 2.5vh;
-        width: 2.5vh;     
-        background-image: url('../../../assets/img/user-profile/history.png');               
+    .user-profile-container .user-profile .user-info-container .user-info-btn:hover{
+        background-color: #3927d0;
     }
 
-    .user-profile-container .user-profile .user-options-btn-container .user-option-btn .recieve-option-icon{  
-        height: 2.5vh;
-        width: 2.5vh;     
-        background-image: url('../../../assets/img/user-profile/reciever.png');               
+    .user-profile-container .user-profile .user-options-btn-container{
+        width:95%;      
+        display: grid;       
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;       
+        height: auto;
+        margin-top:3%
     }
 
-    .user-profile-container .user-profile .user-options-btn-container .user-option-btn .payment-option-icon{  
-        height: 2.5vh;
-        width: 2.5vh;     
-        background-image: url('../../../assets/img/user-profile/operation.png');               
-    }
-
-    .user-profile-container .user-profile .user-options-btn-container .user-option-btn .delete-option-icon{  
-        height: 2.5vh;
-        width: 2.5vh;     
-        background-image: url('../../../assets/img/user-profile/xmark.png');               
-    }
-
-
-
-
-  
-    
-    
-        
+    .user-profile-container .user-profile .user-options-btn-container .user-option-btn{
+        width:100%;     
+        border:none;  
+        font-family: 'Raleway', sans-serif;
+        height: 6vh;  
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;          
+        color: #5585ed; 
+        font-weight: bold;
+        font-size: small;
+        text-align: justify;
+        background-color: white;
+    }    
 }
