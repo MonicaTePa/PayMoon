@@ -55,6 +55,8 @@ header{
     font-size: x-small;
 }
 
+
+
 @media only screen and (max-width: 760px){
 
     .background{
@@ -63,7 +65,8 @@ header{
         position: fixed;
         z-index: -1;
         background-color: #758dec;
-        background-image: url('../../../assets/img/user-desktop/mobile-background.png')
+        background-image: url('../../../assets/img/user-desktop/mobile-background.png');
+        background-size: cover;
     }
 
     .user-profile-container{
@@ -153,6 +156,7 @@ header{
         z-index: -1;  
         background-color: 758dec;
         background-image: url('../../../assets/img/user-desktop/desktop-background.png');
+        background-size: cover;
     }
 
     .user-profile-container{
@@ -208,7 +212,7 @@ header{
     }
 
     .user-profile-container .user-profile .user-options-btn-container{
-        width:95%;      
+        width:90%;      
         display: grid;       
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;       
@@ -231,4 +235,10 @@ header{
         text-align: justify;
         background-color: white;
     }    
+
+    .user-profile-container .user-profile .user-options-btn-container .user-option-btn:hover{        
+        color:#3927d0;
+        font-weight: bolder;
+        
+    }
 }
