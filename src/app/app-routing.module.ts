@@ -4,11 +4,16 @@ import { UserDesktopComponent } from './components/user-desktop/user-desktop.com
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { Page404Component } from './components/page404/page404.component';
 import { HomeComponent } from './components/home/home.component';
+import { CardsComponent } from './components/cards/cards.component';
+import { DepositsComponent } from './components/deposits/deposits.component';
+
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path: 'user-desktop', component: UserDesktopComponent},
   {path: 'user-profile', component: UserProfileComponent},
-  {path:'**',component:Page404Component},
+  {path: 'cards', component: CardsComponent},
+  {path: 'deposits', component: DepositsComponent},
+  {path:'**',component:Page404Component}
 ];
 
 @NgModule({
