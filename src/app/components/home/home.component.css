@@ -1,0 +1,52 @@
+* {
+  margin:0px;
+  padding:0px;
+  font-family: 'Raleway', sans-serif;
+  }
+
+  html, body{
+    width: 95%;
+    height: 100%;
+    position: fixed;
+  }
+
+  body {
+    background-image: url(img/templatec-16.png);
+    margin-left: -10px;
+    background-size: cover;
+    background-position: 0%;
+  }
+
+  text{
+    color: white;
+  }
+
+.rrss {
+    display: flex;
+    justify-content: space-around 3px;
+    text-decoration: none;
+    color: transparent;
+    margin: 3px;
+    margin-top: 680px;
+    margin-left: 20px;
+  }
+
+.rrss1 {
+  background-image: url(img/RRSS-01.png);
+  padding: 0px;
+  width: 40px;
+  height: 40px;
+}
+
+.rrss2 {
+  background-image: url(img/RRSS-02.png);
+  padding: 0px;
+  width: 40px;
+  height: 40px;
+}
+.rrss3 {
+  background-image: url(img/RRSS-03.png);
+  padding: 0px;
+  width: 40px;
+  height: 40px;
+}
