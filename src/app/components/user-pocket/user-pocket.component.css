@@ -1,0 +1,246 @@
+@media only screen and (max-width: 760px) {
+  .background {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: -1;
+    background-image: url('../../../assets/img/user-register-info/mobile-background1.png');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .user-pocket-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 640px;
+    min-width: 240px;
+  }
+
+  .user-pocket-container .user-current-pocket-div {
+    width: 80%;
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    max-width: 380px;
+  }
+
+  .user-pocket-container .user-pocket-title {
+    width: 80%;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+    font-size: large;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #b366da;
+    max-width: 380px;
+    background-color: #ffffff;
+  }
+
+  .user-pocket-container .user-current-pocket-div .user-current-pocket-label {
+    text-align: right;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    width: 100%;
+    font-size: small;
+  }
+
+
+  .user-pocket-container .user-pocket-amount-text {
+    width: 100%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: xx-large;
+    text-align: right;
+    color: #3927d0;
+    margin-top: 2px;
+    padding: 0;
+  }
+
+  .user-pocket-container .user-pocket-info-div {
+    margin-top: 1em;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+  }
+
+  .user-pocket-container .user-pocket-info-div .user-pocket-label {
+    width: 100%;
+    text-align: left;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: small;
+    margin-top: 0.5em;
+    max-width: 380px;
+  }
+
+  .user-pocket-container .user-pocket-info-div .user-pocket-info-item {
+    width: 100%;
+    text-align: right;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: large;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    border-radius: 10px;
+    background-color: #683fd7cc;
+    color: #ffffff;
+    max-width: 380px;
+  }
+
+  .user-pocket-container .user-pocket-button {
+    width: 80%;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: medium;
+    font-weight: bold;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    border-radius: 10px;
+    background-color: #4749de;
+    color: #ffffff;
+    max-width: 500px;
+    margin-top: 1.5em;
+    border: none;
+    max-width: 380px;
+  }
+}
+
+@media only screen and (min-width: 761px) {
+  .background {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: -1;
+    background-image: url('../../../assets/img/user-register-info/desktop-background2.png');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .user-pocket-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 640px;
+  }
+
+  .user-pocket-container .user-current-pocket-div {
+    width: 80%;
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    max-width: 500px;
+  }
+
+  .user-pocket-container .user-pocket-title {
+    width: 80%;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+    font-size: large;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #b366da;
+    max-width: 500px;
+    background-color: #ffffff;
+  }
+
+  .user-pocket-container .user-current-pocket-div .user-current-pocket-label {
+    text-align: right;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    width: 100%;
+    font-size: small;
+  }
+
+
+  .user-pocket-container .user-pocket-amount-text {
+    width: 100%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: xx-large;
+    text-align: right;
+    color: #3927d0;
+    margin-top: 2px;
+    padding: 0;
+    max-width: 500px;
+  }
+
+  .user-pocket-container .user-pocket-info-div {
+    margin-top: 1em;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 500px;
+
+  }
+
+  .user-pocket-container .user-pocket-info-div .user-pocket-label {
+    width: 100%;
+    text-align: left;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: small;
+    margin-top: 0.5em;
+  }
+
+  .user-pocket-container .user-pocket-info-div .user-pocket-info-item {
+    width: 100%;
+    text-align: right;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: large;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    border-radius: 10px;
+    background-color: #683fd7cc;
+    color: #ffffff;
+  }
+
+  .user-pocket-container .user-pocket-button {
+    width: 80%;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: medium;
+    font-weight: bold;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    border-radius: 10px;
+    background-color: #4749de;
+    color: #ffffff;
+    max-width: 500px;
+    margin-top: 1.5em;
+    border: none;
+  }
+
+  .user-pocket-container .user-pocket-button:hover {
+    background-color: #3927d0;
+  }
+
+}

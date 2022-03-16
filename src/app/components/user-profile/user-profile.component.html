@@ -1,22 +1,23 @@
 <div class="background"></div>
-    <app-navbar></app-navbar>
+<app-navbar></app-navbar>
 <div class="user-profile-container">
-    <div class="user-profile">
-        <div class="user-info-container">
-            <h4 class="user-info-container-text">Nombre y Apellido</h4>
-            <p class="user-info-container-text-p">Celular</p>
-            <h5 class="user-info-container-text">3xx xxx xx xx</h5>
-            <p class="user-info-container-text-p">Correo Electrónico</p>
-            <h5 class="user-info-container-text">correousuario@correo</h5>
-            <button class="user-info-btn">Más información</button>
-        </div>    
-        <div class="user-options-btn-container">    
-            <button class="user-option-btn"><span class="pocket-option-icon"></span>Bolsillo<span></span></button>        
-            <button class="user-option-btn"><span class="card-option-icon"></span>Mis tarjetas<span></span></button>
-            <button class="user-option-btn"><span class="payment-option-icon"></span>Pagos<span></span></button>
-            <button class="user-option-btn"><span class="recieve-option-icon"></span>Transacciones<span></span></button>
-            <button class="user-option-btn"><span class="history-option-icon"></span>Historial<span></span></button>
-            <button class="user-option-btn"><span class="delete-option-icon"></span>Eliminar cuenta<span></span></button>            
-        </div>
+  <div class="user-profile">
+    <div class="user-info-container">
+      <h4 class="user-info-container-text">Nombre y Apellido</h4>
+      <p class="user-info-container-text-p">Celular</p>
+      <h5 class="user-info-container-text">3xx xxx xx xx</h5>
+      <p class="user-info-container-text-p">Correo Electrónico</p>
+      <h5 class="user-info-container-text">correousuario@correo</h5>
+      <button class="user-info-btn" routerLink="/user-info">Más información</button>
     </div>
+    <div class="user-options-btn-container">
+      <button class="user-option-btn" routerLink="/user-pocket"><span
+          class="pocket-option-icon"></span>Bolsillo<span></span></button>
+      <button class="user-option-btn"><span class="card-option-icon"></span>Mis tarjetas<span></span></button>
+      <button class="user-option-btn"><span class="payment-option-icon"></span>Pagos<span></span></button>
+      <button class="user-option-btn"><span class="recieve-option-icon"></span>Transacciones<span></span></button>
+      <button class="user-option-btn"><span class="history-option-icon"></span>Historial<span></span></button>
+      <button class="user-option-btn"><span class="delete-option-icon"></span>Eliminar cuenta<span></span></button>
     </div>
+  </div>
+</div>

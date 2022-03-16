@@ -1,0 +1,100 @@
+.container-fluid {
+  min-height: 100%;
+  background-image: url(/assets/img/login/Template-16.png) !important;
+  background-repeat: initial;
+  background-size: 90vw 100vh;
+  image-rendering: auto;
+  margin-bottom: 2%;
+}
+
+.shado {
+  -webkit-box-shadow: 0px 2px 35px 50px #8F58D3;
+  box-shadow: 0px 2px 50px 11px #8F58D3;
+}
+
+a {
+  text-decoration: none;
+  color: #6a11cb;
+}
+
+.card-body {
+  background-color: #3927d0;
+  border-radius: 0 0 13px 13px;
+}
+
+.card-body-main {
+  border-radius: 13px 13px 0 0;
+}
+
+.white {
+  background-color: white;
+  height: auto;
+}
+
+.white button {
+  color: white;
+  background-color: #673FD7;
+}
+
+.white button:hover {
+  background-color: #3927d0;
+}
+
+.white .text-purple a {
+  color: #673FD7;
+}
+
+.white p {
+  color: #673FD7;
+}
+
+.white input {
+  border-color: #673FD7;
+}
+
+.text-purple {
+  padding-left: 2vw;
+}
+
+.purple {
+
+  background: #6a11cb;
+  background: -webkit-linear-gradient(to right, rgba(57, 39, 208, 1), rgba(103, 63, 215, 1));
+  background: linear-gradient(to right, rgba(103, 63, 215, 1), rgba(57, 39, 208, 1));
+  height: 30vh;
+}
+
+
+@media only screen and (min-width: 500px) {
+  h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 5vh;
+  }
+
+  .container-fluid {
+    background-image: url(/assets/img/login/mobile-background-1.png);
+    background-size: 110vw 100vh;
+    background-repeat: no-repeat;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 5vh;
+  }
+
+  h3 {
+    margin-top: -5%;
+    font-size: 2vw;
+  }
+
+  .container-fluid {
+    min-height: 100%;
+    background-image: url(/assets/img/login/Template-16.png);
+    background-repeat: initial;
+    background-size: 90vw 100vh;
+    image-rendering: auto;
+    margin-bottom: 2vh;
+  }
+}

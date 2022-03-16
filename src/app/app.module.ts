@@ -13,6 +13,8 @@ import { AddCardComponent } from './components/add-card/add-card.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { UserRegisterInfoComponent } from './components/user-register-info/user-register-info.component';
+import { UserPocketComponent } from './components/user-pocket/user-pocket.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,7 @@ import { UserRegisterInfoComponent } from './components/user-register-info/user-
     AddCardComponent, 
     NavbarComponent, 
     FooterComponent, 
-    UserRegisterInfoComponent
+    UserRegisterInfoComponent, UserPocketComponent, LoginComponent
   ],
   imports: [
     BrowserModule,

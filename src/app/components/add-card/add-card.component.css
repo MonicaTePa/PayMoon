@@ -1,0 +1,17 @@
+.page-addCard-container {
+  display: block;
+  width: 100%;
+}
+
+.title-page {
+  font-size: xx-large;
+  font-weight: 700;
+  color: #3927D0;
+  margin: 20px;
+  text-align: center;
+}
+
+.form-card {
+  display: flex;
+  justify-content: center;
+}
