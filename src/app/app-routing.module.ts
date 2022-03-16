@@ -10,7 +10,8 @@ import { AddCardComponent } from './components/add-card/add-card.component';
 import { UserRegisterInfoComponent } from './components/user-register-info/user-register-info.component';
 import { UserPocketComponent } from './components/user-pocket/user-pocket.component';
 import { LoginComponent } from './components/login/login.component';
-
+import { TransfersComponent } from './components/transfers/transfers.component';
+import { HistoryComponent } from './components/history/history.component';
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path: 'user-desktop', component: UserDesktopComponent},
@@ -20,7 +21,9 @@ const routes: Routes = [
   {path: 'deposits', component: DepositsComponent},
   {path: 'addCard', component: AddCardComponent},
   {path: 'user-pocket',component:UserPocketComponent},
-  { path: 'ingreso', component: LoginComponent },
+  {path: 'transacciones', component: TransfersComponent },
+  {path: 'historial', component: HistoryComponent },
+
   {path:'**',component:Page404Component}
 ];
 

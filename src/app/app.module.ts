@@ -11,10 +11,11 @@ import { Page404Component } from './components/page404/page404.component';
 import { HomeComponent } from './components/home/home.component';
 import { AddCardComponent } from './components/add-card/add-card.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { UserRegisterInfoComponent } from './components/user-register-info/user-register-info.component';
 import { UserPocketComponent } from './components/user-pocket/user-pocket.component';
 import { LoginComponent } from './components/login/login.component';
+import { TransfersComponent } from './components/transfers/transfers.component';
+import { HistoryComponent } from './components/history/history.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +28,9 @@ import { LoginComponent } from './components/login/login.component';
     HomeComponent, 
     AddCardComponent, 
     NavbarComponent, 
-    FooterComponent, 
-    UserRegisterInfoComponent, UserPocketComponent, LoginComponent
+    UserRegisterInfoComponent, 
+    UserPocketComponent, 
+    LoginComponent, TransfersComponent, HistoryComponent
   ],
   imports: [
     BrowserModule,
