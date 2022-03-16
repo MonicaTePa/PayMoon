@@ -1,4 +1,6 @@
-# Frontend
+# Frontend de la aplicación PAYMOON
+
+Historias de usuario: https://saghir.atlassian.net/jira/software/projects/PAYM/boards/1/backlog?selectedIssue=PAYM-1
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
 
