@@ -1,0 +1,447 @@
+.user-profile-container .user-profile .user-options-btn-container .user-option-btn span {
+  height: 2vh;
+  width: 2vh;
+  background-image: url('../../../assets/img/user-profile/right-arrow.png');
+  background-size: cover;
+}
+
+.user-profile-container .user-profile .user-options-btn-container .user-option-btn .card-option-icon {
+  height: 2.5vh;
+  width: 2.5vh;
+  background-image: url('../../../assets/img/user-profile/credit-card.png');
+}
+
+.user-profile-container .user-profile .user-options-btn-container .user-option-btn .pocket-option-icon {
+  height: 2.5vh;
+  width: 2.5vh;
+  background-image: url('../../../assets/img/user-profile/wallet.png');
+}
+
+.user-profile-container .user-profile .user-options-btn-container .user-option-btn .history-option-icon {
+  height: 2.5vh;
+  width: 2.5vh;
+  background-image: url('../../../assets/img/user-profile/history.png');
+}
+
+.user-profile-container .user-profile .user-options-btn-container .user-option-btn .recieve-option-icon {
+  height: 2.5vh;
+  width: 2.5vh;
+  background-image: url('../../../assets/img/user-profile/reciever.png');
+}
+
+.user-profile-container .user-profile .user-options-btn-container .user-option-btn .payment-option-icon {
+  height: 2.5vh;
+  width: 2.5vh;
+  background-image: url('../../../assets/img/user-profile/operation.png');
+}
+
+.user-profile-container .user-profile .user-options-btn-container .user-option-btn .delete-option-icon {
+  height: 2.5vh;
+  width: 2.5vh;
+  background-image: url('../../../assets/img/user-profile/xmark.png');
+}
+
+.user-profile-container .user-profile .user-info-container .user-info-container-text {
+  margin-bottom: 0.5em;
+}
+
+.user-profile-container .user-profile .user-info-container .user-info-container-text-p {
+  font-size: x-small;
+}
+
+
+
+@media only screen and (max-width: 760px) {
+
+  .background {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: -1;
+    background-color: #758dec;
+    background-image: url('../../../assets/img/user-desktop/mobile-background.png');
+    background-size: cover;
+  }
+
+  .user-profile-container {
+    height: 100vh;
+    width: 100vw;
+    padding-top: 15vh;
+    display: flex;
+    justify-content: center;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+  }
+
+  .user-profile-container .user-profile {
+    width: 80%;
+    max-width: 350px;
+    min-width: 250px;
+    background-color: #ffffff;
+    padding-top: 3%;
+    height: 65vh;
+    min-height: 410px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #c182e1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .user-profile-container .user-profile .user-info-container {
+    width: 95%;
+    background-color: #ffffff;
+    height: auto;
+    border-bottom: 2px solid #cbb1da;
+    padding-bottom: 7%;
+  }
+
+  .user-profile-container .user-profile .user-info-container .user-info-btn {
+    width: 90%;
+    border: none;
+    background-color: #5786ed;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+    cursor: pointer
+  }
+
+  .user-profile-container .user-profile .user-options-btn-container {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: auto;
+    margin-top: 3%
+  }
+
+  .user-profile-container .user-profile .user-options-btn-container .user-option-btn {
+    width: 90%;
+    border: none;
+    font-family: 'Raleway', sans-serif;
+    height: 6vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 1em;
+    padding-right: 1em;
+    color: #5585ed;
+    font-weight: bold;
+    font-size: small;
+    text-align: justify;
+    background-color: white;
+  }
+}
+
+@media only screen and (min-width: 761px) {
+
+  .background {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: -1;
+    background-color: 758dec;
+    background-image: url('../../../assets/img/user-desktop/desktop-background.png');
+    background-size: cover;
+  }
+
+  .user-profile-container {
+    height: 100vh;
+    width: 100vw;
+    padding-top: 15vh;
+    display: flex;
+    justify-content: center;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+  }
+
+  .user-profile-container .user-profile {
+    width: 80%;
+    background-color: #ffffff;
+    padding-top: 3%;
+    height: 65vh;
+    min-height: 280px;
+    max-width: 650px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #c182e1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .user-profile-container .user-profile .user-info-container {
+    width: 90%;
+    background-color: #ffffff;
+    height: auto;
+    border-bottom: 2px solid #cbb1da;
+    padding-bottom: 3%;
+  }
+
+  .user-profile-container .user-profile .user-info-container .user-info-btn {
+    width: 100%;
+    border: none;
+    background-color: #5786ed;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+    cursor: pointer
+  }
+
+  .user-profile-container .user-profile .user-info-container .user-info-btn:hover {
+    background-color: #3927d0;
+  }
+
+  .user-profile-container .user-profile .user-options-btn-container {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: auto;
+    margin-top: 3%
+  }
+
+  .user-profile-container .user-profile .user-options-btn-container .user-option-btn {
+    width: 100%;
+    border: none;
+    font-family: 'Raleway', sans-serif;
+    height: 6vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    color: #5585ed;
+    font-weight: bold;
+    font-size: small;
+    text-align: justify;
+    background-color: white;
+  }
+
+  .user-profile-container .user-profile .user-options-btn-container .user-option-btn:hover {
+    color: #3927d0;
+    font-weight: bolder;
+
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+:root {
+  --pale-blue: hsl(225, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
+}
+
+body {
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: 16px;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 0px;
+  margin: 0px;
+  background: var(--pale-blue);
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: url(https://rvs-order-summary-component.netlify.app/images/pattern-background-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top;
+  z-index: -1;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 320px;
+  min-height: 400px;
+  margin: 60px auto;
+  border-radius: 10px;
+  background: white;
+}
+
+.card .card-header {
+  width: 100%;
+  height: 156px;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.card .card-header img {
+  width: 100%;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.card .card-body {
+  width: 100%;
+  height: auto;
+  padding: 25px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card .card-body .card-title {
+  width: 100%;
+  font-weight: 900;
+  color: var(--dark-blue);
+  text-align: center;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.card .card-body .card-text {
+  width: 100%;
+  color: var(--desaturated-blue);
+  text-align: center;
+  line-height: 25px;
+  padding: 15px 0px;
+  box-sizing: border-box;
+}
+
+.card .card-body .card-plan {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 15px;
+  background: var(--very-pale-blue);
+  border-radius: 10px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.card .card-body .card-plan .card-plan-img {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.card .card-body .card-plan .card-plan-text {
+  flex-grow: 6;
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+}
+
+.card .card-body .card-plan .card-plan-text .card-plan-title {
+  color: var(--dark-blue);
+  font-weight: 900;
+  font-size: 14px;
+}
+
+.card .card-body .card-plan .card-plan-text .card-plan-price {
+  color: var(--desaturated-blue);
+  font-size: 14px;
+}
+
+.card .card-body .card-plan .card-plan-link {
+  flex-grow: 1;
+}
+
+.card .card-body .card-plan .card-plan-link a {
+  color: var(--bright-blue);
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.card .card-body .card-plan .card-plan-link a:hover {
+  color: #766cf1;
+  text-decoration: none;
+  ;
+}
+
+.card .card-body .card-payment-button {
+  padding: 25px 0px 15px;
+  box-sizing: border-box;
+}
+
+.card .card-body .card-payment-button button {
+  width: 100%;
+  height: 50px;
+  border: 0;
+  background: #766cf1;
+  color: white;
+  font-weight: 700;
+  border-radius: 10px;
+  box-shadow: 0px 10px 20px 0px hsl(245deg 75% 52% / 44%);
+  cursor: pointer;
+}
+
+.card .card-body .card-payment-button button:hover {
+  background: #766cf1;
+}
+
+.card .card-body .card-cancel-button {
+  padding: 15px 0px;
+  box-sizing: border-box;
+}
+
+.card .card-body .card-cancel-button button {
+  width: 100%;
+  border: 0;
+  background: none;
+  color: var(--desaturated-blue);
+  font-weight: 900;
+  text-align: center;
+  cursor: pointer;
+}
+
+.card .card-body .card-cancel-button button:hover {
+  color: var(--dark-blue);
+}
+
+
+@media (max-width: 375px) {
+  body {
+    height: auto;
+  }
+
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: url(https://rvs-order-summary-component.netlify.app/images/pattern-background-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+    z-index: -1;
+  }
+
+}

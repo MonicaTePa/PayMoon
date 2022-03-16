@@ -16,6 +16,7 @@ import { UserPocketComponent } from './components/user-pocket/user-pocket.compon
 import { LoginComponent } from './components/login/login.component';
 import { TransfersComponent } from './components/transfers/transfers.component';
 import { HistoryComponent } from './components/history/history.component';
+import { DepositsComponent } from './components/deposits/deposits.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,10 @@ import { HistoryComponent } from './components/history/history.component';
     NavbarComponent, 
     UserRegisterInfoComponent, 
     UserPocketComponent, 
-    LoginComponent, TransfersComponent, HistoryComponent
+    LoginComponent, 
+    TransfersComponent, 
+    HistoryComponent,
+    DepositsComponent
   ],
   imports: [
     BrowserModule,
