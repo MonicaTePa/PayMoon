@@ -12,6 +12,7 @@ import { LoginComponent } from './components/login/login.component';
 import { TransfersComponent } from './components/transfers/transfers.component';
 import { HistoryComponent } from './components/history/history.component';
 import { DepositsComponent } from './components/deposits/deposits.component';
+import { RegisterComponent } from './components/register/register.component';
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path: 'miCuenta', component: UserDesktopComponent},
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: 'historial', component: HistoryComponent },
   {path: 'ingresar', component: LoginComponent },
   {path: 'depositos', component: DepositsComponent },
+  {path: 'registro', component: RegisterComponent },
   {path:'**',component:Page404Component}
 ];
 

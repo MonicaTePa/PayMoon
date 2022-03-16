@@ -17,6 +17,7 @@ import { LoginComponent } from './components/login/login.component';
 import { TransfersComponent } from './components/transfers/transfers.component';
 import { HistoryComponent } from './components/history/history.component';
 import { DepositsComponent } from './components/deposits/deposits.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { DepositsComponent } from './components/deposits/deposits.component';
     LoginComponent, 
     TransfersComponent, 
     HistoryComponent,
-    DepositsComponent
+    DepositsComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
