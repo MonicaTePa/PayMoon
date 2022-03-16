@@ -12,14 +12,21 @@ import { HomeComponent } from './components/home/home.component';
 import { AddCardComponent } from './components/add-card/add-card.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { UserRegisterInfoComponent } from './components/user-register-info/user-register-info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardsComponent,
     UserDesktopComponent,
-    UserProfileComponent,    
-    UserNavbarComponent, Page404Component, HomeComponent, AddCardComponent, NavbarComponent, FooterComponent
+    UserProfileComponent,
+    UserNavbarComponent, 
+    Page404Component, 
+    HomeComponent, 
+    AddCardComponent, 
+    NavbarComponent, 
+    FooterComponent, 
+    UserRegisterInfoComponent
   ],
   imports: [
     BrowserModule,
