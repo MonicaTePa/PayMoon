@@ -1,17 +1,124 @@
-*{
-    margin: 0;
-    padding: 0;
-text-decoration: none;
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
 }
-.page-cards-container{
-    background-image: url("/assets/img/cards/Template1.png");
-    background-repeat: no-repeat;
-    position: relative;
+
+.page-cards-container {
+  /*  background-image: url("/assets/img/cards/Template1.png");*/
+  background-repeat: no-repeat;
+  position: relative;
+
 }
-.card{
-    background-image: url("/assets/img/cards/credit-card.png");
-    background-repeat: no-repeat;
-    position: relative;
-    width: 100%;
-    height: 500px;
+
+.title-page {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+button {
+  border-style: none;
+  border: 0;
+  background-color: white;
+}
+
+.title-page img,
+.delete-card img {
+  height: 30px;
+  width: 30px;
+}
+
+.title-page-text {
+  font-size: xx-large;
+  font-weight: 700;
+  color: #3927D0;
+  padding-left: 160px;
+}
+
+.card {
+  background-image: url("/assets/img/cards/credit-card.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 400px;
+  font-size: larger;
+  border: none;
+}
+
+.card-information {
+  padding-top: 40px;
+}
+
+.card1 {
+  display: flex;
+  justify-content: center;
+}
+
+.card-name {
+  padding-top: 250px;
+  padding-left: 330px;
+}
+
+.card-number {
+  padding-top: 40px;
+  padding-left: 200px;
+}
+
+.change-number-card {
+  width: 300px;
+  height: 40px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: black;
+  font-weight: 700;
+  position: relative;
+  transition: all 0.5s;
+  z-index: 1;
+  margin-bottom: 20px;
+}
+
+.change-number-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: #4749DE;
+  z-index: -1;
+  transition: all 0.5s;
+}
+
+.change-number-card:hover::before {
+  width: 100%;
+}
+
+.change-number-card:hover {
+  color: white;
+}
+
+.change-number-card:active:before {
+  background: #b9b9b9;
+}
+
+.col-form-label {
+  padding: 10px;
+}
+
+.buttons-save-cancel {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px;
+}
+
+.buttons-save-cancel button {
+  width: 80px;
+
+}
+
+.delete-card {
+  margin-left: 60px;
 }
