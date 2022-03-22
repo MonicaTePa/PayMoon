@@ -1,13 +1,73 @@
-.container-fluid {
-  min-height: 100%;
-  background-image: url(/assets/img/login/Template-16.png);
-  background-repeat: no-repeat;
-  background-size: 100vh;
-  background-position: 0.5vw;
-  image-rendering: auto;
+.card-body{
+  background: #6a11cb;
+  background: -webkit-linear-gradient(to right, rgba(57, 39, 208, 1), rgba(103, 63, 215, 1));
+  background: linear-gradient(to right, rgba(103, 63, 215, 1), rgba(57, 39, 208, 1));
+  border-radius: 11px;
 }
 
-.card-body {
-  background-color: #3927d0;
-  border-radius: 10px;
+.shado{
+  -webkit-box-shadow: 0px 2px 35px 50px #8F58D3; 
+  box-shadow: 0px 2px 50px 11px #8F58D3;
+  height: 110vh;
+}
+
+.login{
+  margin-top: 2vh;
+}
+
+.input-container{
+  height: 20%;
+}
+
+
+@media only screen and (min-width: 1000px) {
+  h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 5vh;
+  }
+
+  .container-fluid {
+    min-height: 100%;
+    background-image: url(/assets/img/login/Template-16.png);
+    background-size: 110vw 100vh;
+    background-repeat: no-repeat;
+  }
+
+  .shado{
+    -webkit-box-shadow: 0px 2px 35px 50px #8F58D3; 
+    box-shadow: 0px 2px 50px 11px #8F58D3;
+    height: 135vh;
+  }
+
+  .bottom{
+    margin-bottom: 5vh;
+  }
+
+  
+}
+
+@media only screen and (min-width: 1500px) {
+  h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 5vh;
+  }
+
+  h3 {
+    margin-top: -5%;
+    font-size: 2vw;
+  }
+
+  .container-fluid {
+    min-height: 100%;
+    background-image: url(/assets/img/login/Template-16.png);
+    background-repeat: initial;
+    background-size: 90vw 100vh;
+    image-rendering: auto;
+    margin-bottom: 10%;
+  }
+  .shado{
+    -webkit-box-shadow: 0px 2px 35px 50px #8F58D3; 
+    box-shadow: 0px 2px 50px 11px #8F58D3;
+    height: 110vh;
+  }
 }
