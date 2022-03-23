@@ -4,9 +4,31 @@
   </div>
   <nav>
     <ul class="lista1">
-      <li><a routerLink="/" class="li1" target="blank"> HOME </a></li>
-      <li><a routerLink="/registro" class="li1" target="blank"> REGISTRO </a></li>
-      <li><a routerLink="/ingresar" class="li1" target="blank"> INICIA SESIÓN </a></li>
+      <li><a routerLink="/" class="li1">INICIO </a></li>
+      <li><a routerLink="/" class="li1"> ACERCA DE PAYMOON </a></li>
+      <li><a routerLink="/registro" class="li1"> REGISTRO </a></li>
+      <li><a routerLink="/ingresar" class="li1"> INICIAR SESIÓN </a></li>
     </ul>
   </nav>
+  <div class="accordion accordion-flush" id="accordionFlushExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+          aria-expanded="true" aria-controls="collapseOne">
+         <img class="dropdown-menu-img" src="/assets/img/navbar/menu.png" alt="menú">
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+        data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <ul class="list1-320px">
+            <li><a routerLink="/" class="li1">INICIO </a></li>
+            <li><a routerLink="/" class="li1"> ACERCA DE PAYMOON </a></li>
+            <li><a routerLink="/registro" class="li1"> REGISTRO </a></li>
+            <li><a routerLink="/ingresar" class="li1"> INICIAR SESIÓN </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
