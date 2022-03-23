@@ -1,55 +1,105 @@
 * {
-    margin:0px;
-    padding:0px;
-    font-family: 'Raleway', sans-serif;
-    }
-  
-   body{
-      width:80%;
-      height: 100%;
-      position: absolute;
-    }
-  
-    body {
-      background-image: url(/assets/img/home/templatec-16.png);
-      margin-left: -10px;
-      background-size: cover;
-      background-position: 0%;
-    }
-  
-    text{
-      color: white;
-    }
-  
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Raleway', sans-serif;
+}
+.home-content{
+  display: block;
+}
+
+body {
+  background-image: url(/assets/img/home/templatec-16.png);
+  margin-left: -10px;
+  background-size: cover;
+  background-position: 0%;
+  width: 80%;
+  height: 100%;
+  position: absolute;
+}
+
+text {
+  color: white;
+}
+
+.rrss {
+  display: flex;
+  justify-content: space-around 3px;
+  text-decoration: none;
+  color: transparent;
+  margin: 3px;
+  margin-top: 650px;
+  margin-left: 20px;
+}
+
+.rrss1 {
+  background-image: url(/assets/img/home/RRSS-01.png);
+  padding: 0px;
+  width: 40px;
+  height: 40px;
+}
+
+.rrss2 {
+  background-image: url(/assets/img/home/RRSS-02.png);
+  padding: 0px;
+  width: 40px;
+  height: 40px;
+}
+
+.rrss3 {
+  background-image: url(/assets/img/home/RRSS-03.png);
+  padding: 0px;
+  width: 40px;
+  height: 40px;
+}
+.footer{
+  position: absolute;
+  padding-top: 720px;
+  width: 100%;
+}
+
+@media only screen and (max-width: 700px) {
+  body {
+    background-image: url(/assets/img/home/templatec-16.png);
+    margin-left: -10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0%;
+    width: 100%;
+    position: absolute;
+  }
+
+  text {
+    color: white;
+  }
+
   .rrss {
-      display: flex;
-      justify-content: space-around 3px;
-      text-decoration: none;
-      color: transparent;
-      margin: 3px;
-      margin-top: 680px;
-      margin-left: 20px;
-    }
-  
+    display: flex;
+    justify-content: space-around 3px;
+    text-decoration: none;
+    color: transparent;
+    margin: 3px;
+    margin-top: 60%;
+    margin-left: 20px;
+  }
+
   .rrss1 {
     background-image: url(/assets/img/home/RRSS-01.png);
     padding: 0px;
     width: 40px;
     height: 40px;
   }
-  
+
   .rrss2 {
     background-image: url(/assets/img/home/RRSS-02.png);
     padding: 0px;
     width: 40px;
     height: 40px;
   }
+
   .rrss3 {
     background-image: url(/assets/img/home/RRSS-03.png);
     padding: 0px;
     width: 40px;
     height: 40px;
   }
-  @media only screen and (max-width: 320px){
-
-  }
+}
