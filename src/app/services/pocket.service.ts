@@ -17,4 +17,16 @@ export class PocketService {
   postPocket(pocket: Pocket): Observable<any>{
     return this.http.post(`${this.API_URL}/${this.USER_URI}`, pocket);
   }
+
+  getPocket(id:String): Observable<any>{
+    return this.http.get(`${this.API_URL}/${this.USER_URI}/${id}`);
+  }
+
+  getPocketById(id:String): Observable<any>{
+    return this.http.get(`${this.API_URL}/${this.USER_URI}/user/${id}`);
+  }
+
+  deletePocket( id:String ): Observable<any>{
+    return this.http.delete(`${this.API_URL}/${this.USER_URI}/${id}`);
+  }
 }
