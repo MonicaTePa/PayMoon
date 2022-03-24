@@ -3,12 +3,12 @@
 <div class="user-profile-container">
   <div class="user-profile">
     <div class="user-info-container">
-      <h4 class="user-info-container-text">Nombre y Apellido</h4>
+      <h4 class="user-info-container-text">{{user_info?.full_name}}</h4>
       <p class="user-info-container-text-p">Celular</p>
-      <h5 class="user-info-container-text">3xx xxx xx xx</h5>
+      <h5 class="user-info-container-text">{{user_info?.phone_number}}</h5>
       <p class="user-info-container-text-p">Correo Electrónico</p>
-      <h5 class="user-info-container-text">correousuario@correo</h5>
-      <button class="user-info-btn" routerLink="/user-info">Más información</button>
+      <h5 class="user-info-container-text">{{user_info?.email}}</h5>
+      <button class="user-info-btn" routerLink="/informacionUsuario">Más información</button>
     </div>
     <div class="user-options-btn-container">
       <button class="user-option-btn" routerLink="/miBolsillo"><span class="pocket-option-icon"

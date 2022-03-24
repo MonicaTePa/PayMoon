@@ -2,8 +2,19 @@
 <header>
     <app-navbar></app-navbar>
 </header>
-<div class="user-register-info-container">
+<div class="user-register-info-container">   
+    <h4 class="user-register-info-title">INFORMACIÓN DE REGISTRO</h4>
     <div class="user-register-info">
-
+        <p class="usuario-info-item"><span>Nombre: </span>{{user_info?.full_name}}</p>        
+        <p class="usuario-info-item"><span>Fecha de Nacimiento (año/mes/día): </span>{{user_birth_date}}</p>
+        <p class="usuario-info-item"><span>Número de documento: </span>{{user_info?.identification}}</p>
+        <p class="usuario-info-item"><span>Fecha expedición documento: </span>{{user_id_date}}</p>       
+        <p class="usuario-info-item"><span>Celular: </span>{{user_info?.phone_number}}</p>
+        <p class="usuario-info-item"><span>Correo electrónico: </span>{{user_info?.email}}</p>
+        <p class="usuario-info-item"><span>Contraseña: </span>••••••••••</p>
     </div>
+    <div class="user-register-info-button-panel">
+        <button class="button-panel-btn" routerLink="/miPerfil">Volver</button>
+        <button class="button-panel-btn">Actualizar</button>
+    </div>    
 </div>
