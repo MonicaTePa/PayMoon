@@ -10,12 +10,12 @@ import { Login } from '../models/login.model';
 export class UserService {
 
   API_URL = 'http://localhost:3000/api/v1/'
-  API_URI = 'users'
+  USER_URI = 'users'
 
   constructor( private http: HttpClient ) {}
 
   postUser( user: User): Observable<any> {
-    return this.http.post(`${this.API_URL}/${this.API_URI}`, user);
+    return this.http.post(`${this.API_URL}/${this.USER_URI}`, user);
   }
 
   loginUser( loginInfo: Login): void {
