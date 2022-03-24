@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { User } from 'src/app/models/user.model';
+import { PocketService } from 'src/app/services/pocket.service';
 import { UserService } from 'src/app/services/user.service';
+import { Pocket } from 'src/app/models/pocket.model';
+import { dashCaseToCamelCase } from '@angular/compiler/src/util';
+
 
 @Component({
   selector: 'app-register',
@@ -16,7 +20,7 @@ export class RegisterComponent implements OnInit {
   NUMBER_REGEX = /^[0-9]*$/;  
   EMAIL_REGEX =  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/; 
 
-  constructor( private fb: FormBuilder, private user_service: UserService ) { 
+  constructor( private fb: FormBuilder, private user_service: UserService, private pocket_service: PocketService ) { 
     this.userRegisterForm = this.fb.group({
       full_name: ['', [Validators.required,Validators.pattern(this.LETTER_REGEX)]],
       birth_date: [[Validators.required]],
@@ -42,8 +46,18 @@ export class RegisterComponent implements OnInit {
       password: this.userRegisterForm.get('password')?.value,
     }
     this.user_service.postUser(userData).subscribe(data =>{
-        console.log('Registro exitoso');
+        console.log('Registro exitoso');        
         console.log(userData);
+        console.log(data); 
+
+        const pocket: Pocket = {id_user: data._id}
+        this.pocket_service.postPocket(pocket).subscribe(data =>{
+          console.log("Bolsillo creado");
+        }, error => {
+          console.log(error);
+          console.log("Error al crear el bolsillo")
+        } );
+               
       }, error =>{
         console.log(error);
         console.log("Hubo un error");
