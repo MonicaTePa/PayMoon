@@ -13,6 +13,7 @@ import { TransfersComponent } from './components/transfers/transfers.component';
 import { HistoryComponent } from './components/history/history.component';
 import { DepositsComponent } from './components/deposits/deposits.component';
 import { RegisterComponent } from './components/register/register.component';
+import { UpdateInfoComponent } from './components/update-info/update-info.component';
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path: 'miCuenta', component: UserDesktopComponent},
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path: 'ingresar', component: LoginComponent },
   {path: 'depositos', component: DepositsComponent },
   {path: 'registro', component: RegisterComponent },
+  {path: 'updateInfo', component: UpdateInfoComponent},
   {path:'**',component:Page404Component}
 ];
 

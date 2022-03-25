@@ -34,5 +34,9 @@ export class UserService {
     console.log(loginInfo.identification);
     console.log(loginInfo.password);
   }  
+
+  updateUser(id:String, user:User): Observable<any>{
+    return this.http.put(`${this.API_URL}/${this.USER_URI}/${id}`,user);
+  }
    
 }
