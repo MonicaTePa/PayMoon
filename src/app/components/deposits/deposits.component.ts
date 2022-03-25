@@ -21,7 +21,7 @@ export class DepositsComponent implements OnInit {
 
   depositRegisterForm: FormGroup;
 
-  numbersRegex = /^[0-9]*$/;  
+  numbersRegex = /^[0-9]+$/;  
   
   constructor( private fb: FormBuilder, private card_service: CardService, private deposit_service: DepositsService, private pocket_service: PocketService) {
     this.depositRegisterForm = fb.group({

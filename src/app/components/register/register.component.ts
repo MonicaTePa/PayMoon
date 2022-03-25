@@ -46,7 +46,11 @@ export class RegisterComponent implements OnInit {
       password: this.userRegisterForm.get('password')?.value,
     }
     this.user_service.postUser(userData).subscribe(data =>{
-        console.log('Registro exitoso');        
+        if(!data.message){
+          console.log(data.message);
+          console.log('Registro exitoso');
+        }
+                
         console.log(userData);
         console.log(data); 
 

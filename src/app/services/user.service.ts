@@ -22,6 +22,10 @@ export class UserService {
     return this.http.get(`${this.API_URL}/${this.USER_URI}/${id}`);
   }
 
+  getUserByPhone( phone_number: String ): Observable<any> {
+    return this.http.get(`${this.API_URL}/${this.USER_URI}/phone/${phone_number}`);
+  }
+
   deleteUser( id:String ): Observable<any>{
     return this.http.delete(`${this.API_URL}/${this.USER_URI}/${id}`);
   }
