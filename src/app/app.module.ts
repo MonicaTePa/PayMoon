@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { CardsComponent } from './components/cards/cards.component';
 import { UserDesktopComponent } from './components/user-desktop/user-desktop.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
-import { UserNavbarComponent } from './components/user-navbar/user-navbar.component';
 import { Page404Component } from './components/page404/page404.component';
 import { HomeComponent } from './components/home/home.component';
 import { AddCardComponent } from './components/add-card/add-card.component';
@@ -23,14 +22,14 @@ import { DepositsComponent } from './components/deposits/deposits.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { UpdateInfoComponent } from './components/update-info/update-info.component';
-
+import { LegalComponent } from './components/legal/legal.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 @NgModule({
   declarations: [
     AppComponent,
     CardsComponent,
     UserDesktopComponent,
     UserProfileComponent,
-    UserNavbarComponent, 
     Page404Component, 
     HomeComponent, 
     AddCardComponent, 
@@ -44,6 +43,8 @@ import { UpdateInfoComponent } from './components/update-info/update-info.compon
     RegisterComponent,
     FooterComponent,
     UpdateInfoComponent
+    LegalComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
