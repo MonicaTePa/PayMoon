@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
-import { Transaction } from 'src/app/models/transaction.model';
 import { TransactionService } from 'src/app/services/transaction.service';
 import { Transference } from 'src/app/models/transference.model';
 
