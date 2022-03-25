@@ -18,7 +18,7 @@ const routes: Routes = [
   {path: 'miCuenta', component: UserPocketComponent},
   {path: 'miPerfil', component: UserProfileComponent},
   {path: 'informacionUsuario', component: UserRegisterInfoComponent},
-  {path: 'misTarjetas', component: CardsComponent},
+  {path: 'misTarjetas', component: CardsComponent}, 
   {path: 'agregarTarjeta', component: AddCardComponent},
   {path: 'miBolsillo',component:UserPocketComponent},
   {path: 'transacciones', component: TransfersComponent },

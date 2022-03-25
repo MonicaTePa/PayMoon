@@ -13,15 +13,19 @@
 
         <div class="card-plan-text">
 
-          <div class="card-plan-title">Número PayMoon a recargar</div>
-          <input type="text" placeholder="+57 312 842 0188">
+          <div class="card-plan-title">Origen de la Recarga</div>
+          <select >            
+            <option *ngFor='let item of card_list' [value]="item?._id">
+              {{item?.card_name}}
+            </option>
+          </select>
           <div class="card-plan-title">Monto a transferir</div>
-          <input type="Number" placeholder="$ 0.000">
+          <input type="text" class="text-center" placeholder="$ 0.000">
         </div>
 
       </div>
       <div class="card-payment-button">
-        <button>Obtener código de transferencia</button>
+        <button>Recargar</button>
       </div>
       <div class="card-cancel-button">
         <button routerLink="/miCuenta">Cancelar</button>

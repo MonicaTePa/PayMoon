@@ -2,28 +2,39 @@
 <div class="page-addCard-container col-12">
   <p class="title-page">Agregar nueva tarjeta</p>
   <div class="form-card">
-    <form class="col-6">
+    <form [formGroup]="cardRegisterForm" (ngSubmit) ="cardRegister()" class="col-6">
       <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Número de tarjeta:</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <label  for="exampleInputEmail1" class="form-label">Número de tarjeta:</label>
+        <input  formControlName = "card_number" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Tipo: </label>
+        <select formControlName = "card_type" name="cars" id="cars">
+          <option value="DEBITO">DÉBITO</option>
+          <option value="CREDITO">CRÉDITO</option>          
+        </select>
       </div>
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Fecha de vencimiento:</label>
-        <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input formControlName = "expiration_date" type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
       </div>
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">CVC:</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input formControlName = "cvc" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
       </div>
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">País:</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input formControlName = "country" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
       </div>
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Código postal:</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input formControlName = "postal_code" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
       </div>
-      <button type="submit" class="btn btn-primary" routerLink="/misTarjetas">Guardar tarjeta</button>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Nombre tarjeta:</label>
+        <input formControlName = "card_name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      </div>
+      <button type="submit" class="btn btn-primary">Guardar tarjeta</button>
     </form>
   </div>
 </div>
