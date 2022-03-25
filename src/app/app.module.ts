@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms'; 
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-
+import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CardsComponent } from './components/cards/cards.component';
@@ -21,9 +20,8 @@ import { HistoryComponent } from './components/history/history.component';
 import { DepositsComponent } from './components/deposits/deposits.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { UpdateInfoComponent } from './components/update-info/update-info.component';
-import { LegalComponent } from './components/legal/legal.component';
-import { AboutUsComponent } from './components/about-us/about-us.component';
+import {HttpClientModule} from '@angular/common/http'; // add this line
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,16 +39,15 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
     HistoryComponent,
     DepositsComponent,
     RegisterComponent,
-    FooterComponent,
-    UpdateInfoComponent
-    LegalComponent,
-    AboutUsComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    FormsModule,
+    HttpClientModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

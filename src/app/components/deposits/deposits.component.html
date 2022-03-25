@@ -5,35 +5,27 @@
     <div class="card-header">
       <img src="assets/img/user-register-info/favicon.ico_Mesa de trabajo 1.png" width="100" height="160">
     </div>
-    <form [formGroup] = depositRegisterForm (ngSubmit)="pocketDeposit()" >
     <div class="card-body">
       <div class="card-title">Recargar dinero a mi bolsillo</div>
       <div class="card-text">Recarga tu cuenta fácil, rápido y seguro!</div>
       <div class="card-plan">
 
-       
+
         <div class="card-plan-text">
-          
-            <div class="card-plan-title">Origen de la Recarga</div>
-          <select formControlName="id_card">            
-            <option *ngFor='let item of card_list' [value]="item?._id">
-              {{item?.card_name}}
-            </option>
-          </select>
-          <div class="card-plan-title">Monto a recargar</div>
-          <input formControlName="amount" type="text" class="text-center" placeholder="$ 0.000">
-                 
+
+          <div class="card-plan-title">Número PayMoon a recargar</div>
+          <input type="text" placeholder="+57 312 842 0188">
+          <div class="card-plan-title">Monto a transferir</div>
+          <input type="Number" placeholder="$ 0.000">
         </div>
 
       </div>
       <div class="card-payment-button">
-        <button type="submit">Recargar</button>
+        <button>Obtener código de transferencia</button>
       </div>
-    
       <div class="card-cancel-button">
         <button routerLink="/miCuenta">Cancelar</button>
       </div>
     </div>
-  </form>
   </div>
 </main>

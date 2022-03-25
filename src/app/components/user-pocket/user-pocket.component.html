@@ -1,23 +1,22 @@
 <div class="background"></div>
-<app-navbar></app-navbar>
+  <app-navbar></app-navbar>
 <div class="user-pocket-container">
   <p class="user-pocket-title">MI BOLSILLO</p>
   <div class="user-current-pocket-div">
     <p class="user-pocket-label user-current-pocket-label">Saldo actual</p>
-    <h2 class="user-pocket-amount-text">${{pocket_info?.balance?.toLocaleString('es-CO')}}</h2>
+    <h2 class="user-pocket-amount-text">$500.000</h2>
   </div>
   <div class="user-pocket-info-div">
     <p class="user-pocket-label">Saldo anterior</p>
     <p class="user-pocket-info-item">$570.000</p>
     <p class="user-pocket-label">Gastos de este mes</p>
-    <p class="user-pocket-info-item">${{pocket_info?.payments?.toLocaleString('es-CO')}}</p>
+    <p class="user-pocket-info-item">$70.000</p>
     <p class="user-pocket-label">Ingresos de este mes</p>
-    <p class="user-pocket-info-item">${{pocket_info?.receptions?.toLocaleString('es-CO')}}</p>
+    <p class="user-pocket-info-item">$55.000</p>
     <p class="user-pocket-label">Recargas de este mes</p>
-    <p class="user-pocket-info-item">${{pocket_info?.deposits?.toLocaleString('es-CO')}}</p>
+    <p class="user-pocket-info-item">$150.000</p>
     <p class="user-pocket-label">Valor última recarga</p>
     <p class="user-pocket-info-item">$30.000</p>
   </div>
   <button class="user-pocket-button" routerLink="/miPerfil">Volver</button>
 </div>
-<app-footer class="footer"></app-footer>

@@ -1,34 +1,68 @@
 <app-navbar></app-navbar>
 <div class="background"></div>
 <main>
+
   <div class="card">
     <div class="card-header">
       <img src="assets/img/user-register-info/favicon.ico_Mesa de trabajo 1.png" width="100" height="160">
     </div>
+    
     <div class="card-body">
       <p> ÚLTIMAS TRANSACCIONES</p>
 
       <table class="table table-sm table-striped table-hover text-nowrap grid-welcm">
         <thead class="default">
           <tr>
-            <th class="small">Fecha</th>
-            <th class="small">Monto</th>
-            <th class="small">Paga</th>
-            <th class="small">Cobra</th>
+            <th>Fecha</th>
+            <th>Monto</th>
+            <th>Reporte PDF</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor = "let item of transference_list">
-            <td style="font-size:12px;">{{item.date}}</td>
-            <td style="font-size:12px;">${{item.amount}}</td>
-            <td style="font-size:12px;">{{item.payer}}</td>
-            <td style="font-size:12px;">{{item.receiver}}</td>            
-          </tr>          
+          <tr>
+            <td>1/6/18</td>
+            <td>$100.000</td>
+            <td><a routerLink="/historial">Descargar</a></td>
+          </tr>
+          <tr>
+            <td>1/5/18</td>
+            <td>$120.000</td>
+            <td><a routerLink="/historial">Descargar</a></td>
+          </tr>
+          <tr>
+            <td>1/4/18</td>
+            <td>$60.000</td>
+            <td><a routerLink="/historial">Descargar</a></td>
+          </tr>
+          <tr>
+            <td>1/3/18</td>
+            <td>$450.000</td>
+            <td><a routerLink="/historial">Descargar</a></td>
+          </tr>
+          <tr>
+            <td>1/2/18</td>
+            <td>$10.000</td>
+            <td><a routerLink="/historial">Descargar</a></td>
+          </tr>
+          <tr>
+            <td>1/1/18</td>
+            <td>$180.000</td>
+            <td><a routerLink="/historial">Descargar</a></td>
+          </tr>
+
+          <tr>
+            <td>1/8/17</td>
+            <td>$100.000</td>
+            <td><a routerLink="/historial">Descargar</a></td>
+          </tr>
         </tbody>
       </table>
-      <br>      
+      <br>
+      <div class="card-payment-button">
+        <button>Bucar reporte por fecha</button>
+      </div>
       <div class="card-cancel-button">
-        <button routerLink="/miPerfil">Salir</button>
+        <button>Salir</button>
       </div>
     </div>
   </div>
