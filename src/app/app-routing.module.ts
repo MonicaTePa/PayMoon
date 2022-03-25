@@ -14,6 +14,7 @@ import { HistoryComponent } from './components/history/history.component';
 import { DepositsComponent } from './components/deposits/deposits.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LegalComponent } from './components/legal/legal.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'miCuenta', component: UserPocketComponent },
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'depositos', component: DepositsComponent },
   { path: 'legal', component: LegalComponent },
   { path: 'registro', component: RegisterComponent },
+  {path: 'paymoon', component: AboutUsComponent },
   { path: '**', component: Page404Component }
 ];
 

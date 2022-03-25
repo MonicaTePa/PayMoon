@@ -22,6 +22,7 @@ import { DepositsComponent } from './components/deposits/deposits.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LegalComponent } from './components/legal/legal.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { LegalComponent } from './components/legal/legal.component';
     DepositsComponent,
     RegisterComponent,
     FooterComponent,
-    LegalComponent
+    LegalComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
