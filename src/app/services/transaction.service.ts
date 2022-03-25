@@ -16,4 +16,8 @@ export class TransactionService {
   postTransaction(transaction: Transaction): Observable<any>{
     return this.http.post(`${this.API_URL}/${this.USER_URI}`, transaction);
   }
+
+  getTransactionByUserId(user_id: string): Observable<any>{
+    return this.http.get(`${this.API_URL}/${this.USER_URI}/user/${user_id}`);
+  }
 }
