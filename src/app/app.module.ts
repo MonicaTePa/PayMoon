@@ -21,9 +21,9 @@ import { HistoryComponent } from './components/history/history.component';
 import { DepositsComponent } from './components/deposits/deposits.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { UpdateInfoComponent } from './components/update-info/update-info.component';
 import { LegalComponent } from './components/legal/legal.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +42,7 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
     DepositsComponent,
     RegisterComponent,
     FooterComponent,
+    UpdateInfoComponent
     LegalComponent,
     AboutUsComponent
   ],
