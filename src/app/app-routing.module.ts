@@ -15,7 +15,7 @@ import { DepositsComponent } from './components/deposits/deposits.component';
 import { RegisterComponent } from './components/register/register.component';
 const routes: Routes = [
   {path:'',component:HomeComponent},
-  {path: 'miCuenta', component: UserDesktopComponent},
+  {path: 'miCuenta', component: UserPocketComponent},
   {path: 'miPerfil', component: UserProfileComponent},
   {path: 'informacionUsuario', component: UserRegisterInfoComponent},
   {path: 'misTarjetas', component: CardsComponent}, 

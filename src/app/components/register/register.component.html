@@ -13,7 +13,6 @@
                     Registra tus datos
                   </p>
                 </section>
-
                 <form [formGroup] = "userRegisterForm" (ngSubmit)="userRegister()">
                   <div class="form-outline form-white mb-4">
                     <input formControlName="full_name" type="text" id="typeEmailX" placeholder="Nombre"
@@ -63,15 +62,11 @@
                   <button class="btn btn-outline-light btn-lg px-5" type="submit">
                     Sign in
                   </button>
-                </form>
-
-               
-
-                <div class="d-flex justify-content-center text-center login">
+                </form>           
+  <div class="d-flex justify-content-center text-center login">
                   <p class="mb-0">
                     Do you have an account?
-                    <a href="#!" class="text-white-50 fw-bold"
-                      routerLink="/ingreso">Log in</a>
+                    <a href="#!" class="text-white-50 fw-bold" routerLink="/ingreso">Log in</a>
                   </p>
                 </div>
               </div>
@@ -84,3 +79,4 @@
   </section>
 </div>
 <div class="void"></div>
+<app-footer class="footer"></app-footer>

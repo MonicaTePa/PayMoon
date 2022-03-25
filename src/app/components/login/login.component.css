@@ -56,6 +56,12 @@ a {
   padding-left: 2vw;
 }
 
+.footer {
+  padding-top: 9%;
+  position: absolute;
+  width: 100%;
+}
+
 .purple {
 
   background: #6a11cb;
