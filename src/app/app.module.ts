@@ -21,6 +21,7 @@ import { HistoryComponent } from './components/history/history.component';
 import { DepositsComponent } from './components/deposits/deposits.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { LegalComponent } from './components/legal/legal.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { FooterComponent } from './components/footer/footer.component';
     HistoryComponent,
     DepositsComponent,
     RegisterComponent,
-    FooterComponent
+    FooterComponent,
+    LegalComponent
   ],
   imports: [
     BrowserModule,
