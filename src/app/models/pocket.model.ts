@@ -1,11 +1,12 @@
 export class Pocket{
-    id_user: String;
-    balance?: Number;
-    receptions?: Number;
-    payments?: Number;
-    deposits?: Number;    
+    _id?: string;
+    id_user: string;
+    balance?: number;
+    receptions?: number;
+    payments?: number;
+    deposits?: number;    
 
-    constructor(id_user: String, balance?: Number, receptions?:Number, payments?:number,deposits?:Number){
+    constructor(id_user: string, balance?: number, receptions?:number, payments?:number,deposits?:number){
         this.id_user = id_user;
         this.balance = balance;
         this.receptions = receptions;
