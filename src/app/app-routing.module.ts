@@ -13,22 +13,26 @@ import { TransfersComponent } from './components/transfers/transfers.component';
 import { HistoryComponent } from './components/history/history.component';
 import { DepositsComponent } from './components/deposits/deposits.component';
 import { RegisterComponent } from './components/register/register.component';
+import { LegalComponent } from './components/legal/legal.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 import { UpdateInfoComponent } from './components/update-info/update-info.component';
 const routes: Routes = [
-  {path:'',component:HomeComponent},
-  {path: 'miCuenta', component: UserDesktopComponent},
-  {path: 'miPerfil', component: UserProfileComponent},
-  {path: 'informacionUsuario', component: UserRegisterInfoComponent},
-  {path: 'misTarjetas', component: CardsComponent}, 
-  {path: 'agregarTarjeta', component: AddCardComponent},
-  {path: 'miBolsillo',component:UserPocketComponent},
-  {path: 'transacciones', component: TransfersComponent },
-  {path: 'historial', component: HistoryComponent },
-  {path: 'ingresar', component: LoginComponent },
-  {path: 'depositos', component: DepositsComponent },
-  {path: 'registro', component: RegisterComponent },
+  { path: '', component: HomeComponent },
+  { path: 'miCuenta', component: UserPocketComponent },
+  { path: 'miPerfil', component: UserProfileComponent },
+  { path: 'informacionUsuario', component: UserRegisterInfoComponent },
+  { path: 'misTarjetas', component: CardsComponent },
+  { path: 'agregarTarjeta', component: AddCardComponent },
+  { path: 'miBolsillo', component: UserPocketComponent },
+  { path: 'transacciones', component: TransfersComponent },
+  { path: 'historial', component: HistoryComponent },
+  { path: 'ingresar', component: LoginComponent },
+  { path: 'depositos', component: DepositsComponent },
+  { path: 'legal', component: LegalComponent },
+  { path: 'registro', component: RegisterComponent },
+  {path: 'paymoon', component: AboutUsComponent },
   {path: 'updateInfo', component: UpdateInfoComponent},
-  {path:'**',component:Page404Component}
+  { path: '**', component: Page404Component }
 ];
 
 @NgModule({
