@@ -1,0 +1,35 @@
+<app-navbar></app-navbar>
+<div class="background"></div>
+<main>
+  <div class="card">
+    <div class="card-header">
+      <img src="assets/img/user-register-info/favicon.ico_Mesa de trabajo 1.png" width="100" height="160">
+    </div>
+    <div class="card-body">
+      <p> ÚLTIMAS TRANSACCIONES</p>
+
+      <table class="table table-sm table-striped table-hover text-nowrap grid-welcm">
+        <thead class="default">
+          <tr>
+            <th class="small">Fecha</th>
+            <th class="small">Monto</th>
+            <th class="small">Paga</th>
+            <th class="small">Cobra</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let item of transference_list">
+            <td style="font-size:12px;">{{item.date}}</td>
+            <td style="font-size:12px;">${{item.amount}}</td>
+            <td style="font-size:12px;">{{item.payer}}</td>
+            <td style="font-size:12px;">{{item.receiver}}</td>            
+          </tr>          
+        </tbody>
+      </table>
+      <br>      
+      <div class="card-cancel-button">
+        <button routerLink="/miPerfil">Salir</button>
+      </div>
+    </div>
+  </div>
+</main>

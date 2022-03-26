@@ -1,0 +1,171 @@
+
+.user-register-info-container .user-register-info .usuario-info-item{    
+  width: 90%;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  font-family: 'Raleway', sans-serif;    
+}
+
+.user-register-info-container .user-register-info .usuario-info-item span{  
+  font-size: small;
+  font-weight: bold;
+  width: 90%;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  font-family: 'Raleway', sans-serif;    
+}
+
+
+
+@media only screen and (max-width: 800px){
+
+  .background{
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      z-index: -1;
+      background-image: url('../../../assets/img/user-register-info/mobile-background1.png');
+      background-size: cover;
+      background-position: center;
+  }
+
+  .user-register-info-container{
+      width: 100vw;
+      height:100vh;
+      display: flex;   
+      flex-direction:column;
+      align-items: center;
+      justify-content:center; 
+      min-height: 520px;           
+  }
+
+
+  .user-register-info-container .user-register-info{
+      width:80%;
+      min-width: 270px;        
+      height: auto;
+      background-color: #ffffff;    
+      box-shadow: 0 0 10px #673fd6;   
+      border-radius: 10px;   
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start; 
+      align-items: center;  
+      max-width: 540px;  
+  }
+
+  .user-register-info-container .user-register-info-title{
+      font-family: 'Raleway', sans-serif;
+      padding: 0.5em;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #673fd6 ;
+      background-color: #ffffff;  
+      width: 80%;
+      text-align: center;    
+      margin-bottom: 10px;
+      max-width: 540px;
+      min-width: 270px;   
+  }
+
+  .user-register-info-container .user-register-info-button-panel{
+      width: 80%;
+      height: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;   
+      max-width: 540px;    
+      min-width: 270px;    
+  }
+
+  .user-register-info-container .user-register-info-button-panel .button-panel-btn{
+      width: 45%;
+      padding: 0.7em;
+      font-family: 'Raleway', sans-serif;   
+      border: none;
+      border-radius: 10px;
+      color: #ffffff;
+      background-color: #673fd6;
+      font-size: small;
+      font-weight: bold;
+      cursor: pointer;
+  }      
+}
+
+@media only screen and (min-width: 801px){
+
+  .background{
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      z-index: -1;
+      background-image: url('../../../assets/img/user-register-info/desktop-background2.png');
+      background-size: cover;
+      background-position: center;
+  }
+
+  .user-register-info-container{
+      width: 100vw;
+      height:100vh;
+      display: flex;   
+      flex-direction:column;
+      align-items: center;
+      justify-content:center; 
+      min-height: 520px;     
+
+  }
+
+  .user-register-info-container .user-register-info-title{
+      font-family: 'Raleway', sans-serif;
+      padding: 0.5em;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #673fd6 ;
+      background-color: #ffffff;  
+      width: 80%;
+      text-align: center;    
+      margin-bottom: 10px;       
+      max-width:750px;
+  }
+
+  .user-register-info-container .user-register-info{
+      width:80%;
+      min-width: 270px;        
+      height: auto;
+      background-color: #ffffff;    
+      box-shadow: 0 0 10px #673fd6;   
+      border-radius: 10px; 
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width:750px;
+      padding: 1em;
+  }
+
+  .user-register-info-container .user-register-info-button-panel{
+      width: 80%;
+      height: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;    
+      max-width:750px;    
+  }
+
+  .user-register-info-container .user-register-info-button-panel .button-panel-btn{
+      width: 49%;
+      padding: 1em;
+      font-family: 'Raleway', sans-serif;   
+      border: none;
+      border-radius: 10px;
+      color: #ffffff;
+      background-color: #673fd6;
+      font-size: small;
+      font-weight: bold;
+      cursor: pointer;
+  }
+
+  .user-register-info-container .user-register-info-button-panel .button-panel-btn:hover{
+      background-color: #8f58d3;
+  }
+}
