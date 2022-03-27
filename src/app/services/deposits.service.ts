@@ -16,9 +16,9 @@ export class DepositsService {
   postDeposit(deposit:Deposit): Observable<any>{
     return this.http.post(`${this.API_URL}/${this.USER_URI}`, deposit);
   }
-
-
   
-
+  deleteDeposit(id:string): Observable<any>{
+    return this.http.delete(`${this.API_URL}/${this.USER_URI}/${id}`);
+  }
 
 }

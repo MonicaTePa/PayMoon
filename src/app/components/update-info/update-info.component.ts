@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { GlobalConstants } from 'src/app/common/global-constants';
 import { User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-update-info',
@@ -10,7 +12,9 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UpdateInfoComponent implements OnInit {
 
-  user_id: String = "623c1917b98cd2ec0b9e7fe3"
+  //user_id: String = "623c1917b98cd2ec0b9e7fe3"
+  
+  user_id: string = new GlobalConstants().getUserId();
   userUpdateForm : FormGroup;
   user: User | null = null;
 
@@ -61,7 +65,28 @@ export class UpdateInfoComponent implements OnInit {
       this.user_service.updateUser(this.user_id,userUpdate).subscribe(
         data =>{
           console.log(data);
+          if(data.answer === "OK"){
+            Swal.fire({
+              title: data.message,
+              showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+              },
+              hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+              }
+            })
+          }
         }, error =>{
+          Swal.fire({
+            title: 'Lo sentimos',            
+            text: 'Error en el Sistema. Inténtalo más tarde',   
+            icon: 'error',             
+            showClass: {
+              popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+              popup: 'animate__animated animate__fadeOutUp'
+          }}) 
           console.log('Hubo un error')
           console.log(error)
         }

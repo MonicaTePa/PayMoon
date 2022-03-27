@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder, Validators } from '@angular/forms';
 import { Card } from 'src/app/models/card.model';
 import { CardService } from 'src/app/services/card.service'; 
+import { GlobalConstants } from 'src/app/common/global-constants';
 
 @Component({
   selector: 'app-add-card',
@@ -10,7 +11,9 @@ import { CardService } from 'src/app/services/card.service';
 })
 export class AddCardComponent implements OnInit {
 
-  user_id: String = "623c1917b98cd2ec0b9e7fe3"
+  //user_id: String = "623c1917b98cd2ec0b9e7fe3"
+
+  user_id: string = new GlobalConstants().getUserId()
   
   cardRegisterForm: FormGroup;
 

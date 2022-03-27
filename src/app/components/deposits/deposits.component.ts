@@ -6,6 +6,8 @@ import { CardService } from 'src/app/services/card.service';
 import { Pocket } from 'src/app/models/pocket.model';
 import { PocketService } from 'src/app/services/pocket.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms'
+import { GlobalConstants } from 'src/app/common/global-constants';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-deposits',
@@ -14,10 +16,11 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms'
 })
 export class DepositsComponent implements OnInit {
 
-  user_id: string = "623c1917b98cd2ec0b9e7fe3"
-  card_list: Card[] | null = null
-  pocket_former_balence: number = 0;
-  latest_deposite: number = 0;
+  user_id: string = new GlobalConstants().getUserId()
+  //user_id: string = "623c1917b98cd2ec0b9e7fe3"
+  //user_id:string = "623fc410a14aa782fec3bf00"
+
+  card_list: Card[] | null = null  
 
   depositRegisterForm: FormGroup;
 
@@ -36,9 +39,33 @@ export class DepositsComponent implements OnInit {
 
   loadCards(){
     this.card_service.getCardsByUserId(this.user_id).subscribe(
-      data =>{        
+      data =>{  
+        if(data.answer === "OK"){
+          Swal.fire({
+            title: data.message,
+            text: "Para recargar el bolsillo debe tener tarjetas registradas",
+            showClass: {
+              popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+              popup: 'animate__animated animate__fadeOutUp'
+            }
+          });
+        }   
         this.card_list =  data;
+        console.log(this.card_list)
       },error =>{
+        Swal.fire({
+          title: 'Lo sentimos',
+          text: 'Error en el Sistema. Inténtalo más tarde',   
+          icon: 'error',             
+          showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+          },
+          hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+        }}) 
+
         console.log("Error")
         console.log(error);
       }
@@ -46,53 +73,144 @@ export class DepositsComponent implements OnInit {
   }
 
   pocketDeposit(){
-    console.log (typeof(this.depositRegisterForm.get('amount')?.value))
     
+    const id_card: string = this.depositRegisterForm.get('id_card')?.value
+    const amount: number = parseInt(this.depositRegisterForm.get('amount')?.value)   
+    console.log(typeof(id_card))
+
     const deposit: Deposit = {
       id_user: this.user_id,      
-      id_card: this.depositRegisterForm.get('id_card')?.value,
-      amount: parseInt(this.depositRegisterForm.get('amount')?.value),
+      id_card: id_card,
+      amount:  amount?amount:0,
       type: "CARD"
     }
-    console.log(deposit)  
-    this.pocket_service.getPocketById(this.user_id).subscribe(
-      data =>{        
-        const pocket = data;
-        console.log(pocket);        
-          const newPocket: Pocket = {
-            id_user: this.user_id,
-            balance: pocket?.balance?pocket?.balance + deposit.amount: deposit.amount,
-            receptions:pocket?.receptions,
-            payments:pocket?.payments,
-            deposits:pocket?.deposits?pocket?.deposits + deposit.amount: deposit.amount
-          }
-          this.pocket_service.putPocket(pocket._id,newPocket).subscribe(
-            data =>{
-              console.log("Bolsillo actualizado");
-              this.deposit_service.postDeposit(deposit).subscribe(
-                data => {
-                  console.log("deposito creado");
-                  console.log(data)
-                }, error =>{
-                  console.log("Hubo un error");
-                  console.log(data)
-                }
-              );
-            },error => {
-              console.log(error)
-              console.log("Hubo un err")
-            }
-            
-          );
-         console.log(newPocket);      
+    if( typeof(deposit.id_card) !=='string' || deposit.amount <= 0){
+      Swal.fire({
+        text: 'Escoja una tarjeta e ingrese un valor mayor que cero para recargar el bolsillo',
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown'
         },
-      error =>{
-        console.log("Hubo un error")
-        console.log(error);      
-      }
-    );    
-  }
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp'
+        }
+      });
+    }else{
+      this.deposit_service.postDeposit(deposit).subscribe(
+        data=>{
+          if(data.answer === "OK"){
+            console.log(data);
+            const id_deposit = data.id;
+            this.pocket_service.getPocketById(this.user_id).subscribe(
+              data =>{
+                if(!data.message){
+                  const pocket: Pocket = data;
+                  const newPocket: Pocket = {          
+                    id_user: deposit.id_user,
+                    balance: pocket.balance? pocket.balance + deposit.amount: deposit.amount,
+                    receptions: pocket.receptions,
+                    payments: pocket.payments,
+                    deposits: pocket.deposits? pocket.deposits + deposit.amount: deposit.amount,
+                    former_balance: pocket.balance, 
+                    last_deposit: deposit.amount 
+                  }
+                  if(pocket._id){
+                    this.pocket_service.putPocket(pocket._id,newPocket).subscribe(
+                      data =>{                        
+                        this.deposit_service.postDeposit(deposit).subscribe(data =>{                                        
+                          if(data.answer === "OK"){
+                            Swal.fire({
+                              title: 'Recarga exitosa',                   
+                              icon: 'success',             
+                              showClass: {
+                                popup: 'animate__animated animate__fadeInDown'
+                              },
+                              hideClass: {
+                                popup: 'animate__animated animate__fadeOutUp'
+                            }})   
+                          }else{
+                            this.deposit_service.deleteDeposit(id_deposit).subscribe( data=>{
+                              Swal.fire({
+                                title: 'Lo sentimos',
+                                text: 'Error en el Sistema. Inténtalo más tarde',   
+                                icon: 'error',             
+                                showClass: {
+                                  popup: 'animate__animated animate__fadeInDown'
+                                },
+                                hideClass: {
+                                  popup: 'animate__animated animate__fadeOutUp'
+                              }})  
+                            }, error =>{
+                              Swal.fire({
+                                title: 'Lo sentimos',
+                                text: 'Error en el Sistema. Inténtalo más tarde',   
+                                icon: 'error',             
+                                showClass: {
+                                  popup: 'animate__animated animate__fadeInDown'
+                                },
+                                hideClass: {
+                                  popup: 'animate__animated animate__fadeOutUp'
+                              }})  
+                            }
+                              
+                            );
+                            Swal.fire({
+                              title: 'Lo sentimos',
+                              text: 'Error en el Sistema. Inténtalo más tarde',   
+                              icon: 'error',             
+                              showClass: {
+                                popup: 'animate__animated animate__fadeInDown'
+                              },
+                              hideClass: {
+                                popup: 'animate__animated animate__fadeOutUp'
+                            }})                  
+                          }
+                        },error=>{
+                          console.log(error);
+                          Swal.fire({
+                            title: 'Lo sentimos',
+                            text: 'Error en el Sistema. Inténtalo más tarde',   
+                            icon: 'error',             
+                            showClass: {
+                              popup: 'animate__animated animate__fadeInDown'
+                            },
+                            hideClass: {
+                              popup: 'animate__animated animate__fadeOutUp'
+                          }})
+                        });            
+                      }, error =>{
+                        Swal.fire({
+                          title: 'Lo sentimos',
+                          text: 'Error en el Sistema. Inténtalo más tarde',   
+                          icon: 'error',             
+                          showClass: {
+                            popup: 'animate__animated animate__fadeInDown'
+                          },
+                          hideClass: {
+                            popup: 'animate__animated animate__fadeOutUp'
+                        }});                        
+                      }
+                    )}
+                }
+              },error =>{
 
-
-
+              }
+            );            
+          }        
+        },error =>{
+          console.log(error);
+          Swal.fire({
+            title: 'Lo sentimos',
+            text: 'Error en el Sistema. Inténtalo más tarde',   
+            icon: 'error',            
+            showClass: {
+              popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+              popup: 'animate__animated animate__fadeOutUp'
+          }})  
+        }
+      );
+    } 
+  } 
+   
 }

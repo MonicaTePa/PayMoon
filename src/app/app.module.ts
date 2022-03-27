@@ -24,6 +24,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { UpdateInfoComponent } from './components/update-info/update-info.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,

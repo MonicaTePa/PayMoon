@@ -1,6 +1,7 @@
 import { Component, ComponentFactoryResolver, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
+import { GlobalConstants } from 'src/app/common/global-constants';
 
 @Component({
   selector: 'app-user-profile',
@@ -10,7 +11,8 @@ import { UserService } from 'src/app/services/user.service';
 export class UserProfileComponent implements OnInit {
 
   user_info : User | null = null;  
-  user_id: String = '623c1917b98cd2ec0b9e7fe3'
+  // user_id: String = '623c1917b98cd2ec0b9e7fe3'
+  user_id : string = new GlobalConstants().getUserId()
 
   constructor( private user_service: UserService) { 
     
