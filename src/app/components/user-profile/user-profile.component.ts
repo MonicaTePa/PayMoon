@@ -1,6 +1,7 @@
 import { Component, ComponentFactoryResolver, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-user-profile',
@@ -10,10 +11,10 @@ import { UserService } from 'src/app/services/user.service';
 export class UserProfileComponent implements OnInit {
 
   user_info : User | null = null;  
-  user_id: String = '623c1917b98cd2ec0b9e7fe3'
+  id: string | any;
 
-  constructor( private user_service: UserService) { 
-    
+  constructor( private user_service: UserService, private userPath: ActivatedRoute) { 
+    this.id = this.userPath.snapshot.paramMap.get('id');
   }
 
   ngOnInit(): void {
@@ -21,7 +22,7 @@ export class UserProfileComponent implements OnInit {
   }
 
   loadUserInfo(){
-    this.user_service.getUserById(this.user_id).subscribe(
+    this.user_service.getUserById(this.id).subscribe(
       data=>{
         this.user_info = data;        
         console.log(this.user_info);

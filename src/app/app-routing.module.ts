@@ -19,7 +19,7 @@ import { UpdateInfoComponent } from './components/update-info/update-info.compon
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'miCuenta', component: UserPocketComponent },
-  { path: 'miPerfil', component: UserProfileComponent },
+  { path: 'miPerfil/:id', component: UserProfileComponent },
   { path: 'informacionUsuario', component: UserRegisterInfoComponent },
   { path: 'misTarjetas', component: CardsComponent },
   { path: 'agregarTarjeta', component: AddCardComponent },

@@ -1,6 +1,6 @@
 export interface JwtResponse{
   dataUser:{
-		id?: any,
+		_id?: any,
 		name: string,
 		identification: string,
 		accesToken: string,
