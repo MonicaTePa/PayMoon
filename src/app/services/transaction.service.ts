@@ -20,4 +20,8 @@ export class TransactionService {
   getTransactionByUserId(user_id: string): Observable<any>{
     return this.http.get(`${this.API_URL}/${this.USER_URI}/user/${user_id}`);
   }
+
+  deleteTransaction(id: string){
+    return this.http.delete(`${this.API_URL}/${this.USER_URI}/${id}`);
+  }
 }
