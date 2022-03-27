@@ -19,7 +19,7 @@
 
               <div class="mb-md-5 mt-md-4 pb-5">
 
-                <form [formGroup] = userLoginForm (ngSubmit) = "loginUser()">
+                <form #frmLogin="ngForm" [formGroup] = userLoginForm (ngSubmit) = "onLoginUser(frmLogin)">
                   <div class="form-outline form-white mb-4">
                     <input formControlName = "identification" type="text" id="typeEmailX" placeholder="Documento de identidad"
                       class="form-control form-control-lg" />

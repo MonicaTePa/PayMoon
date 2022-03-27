@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-
 import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { User } from 'src/app/models/user.model';
 import { PocketService } from 'src/app/services/pocket.service';
 import { UserService } from 'src/app/services/user.service';
 import { Pocket } from 'src/app/models/pocket.model';
 import { dashCaseToCamelCase } from '@angular/compiler/src/util';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
+import Swal from 'sweetalert2';
 
 
 //import { FormBuilder,FormGroup, Validators } from '@angular/forms';
@@ -23,7 +25,7 @@ export class RegisterComponent implements OnInit {
   NUMBER_REGEX = /^[0-9]*$/;  
   EMAIL_REGEX =  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/; 
 
-  constructor( private fb: FormBuilder, private user_service: UserService, private pocket_service: PocketService ) { 
+  constructor( private fb: FormBuilder, private user_service: UserService, private pocket_service: PocketService, private authService: AuthService, private router: Router) { 
     this.userRegisterForm = this.fb.group({
       full_name: ['', [Validators.required,Validators.pattern(this.LETTER_REGEX)]],
       birth_date: [[Validators.required]],
@@ -70,4 +72,23 @@ export class RegisterComponent implements OnInit {
         console.log("Hubo un error");
     });
   }
+
+  onUserRegister(form: any): void {
+    this.authService.register(form.value).subscribe(data => {
+      this.router.navigate(['/ingresar']);
+      Swal.fire({
+        icon: 'success',
+        title: 'Felicidaded! Eres un nuevo usuario de PayMoon',
+        text: 'Te registraste correctamente'
+      })
+    }, error => {
+      Swal.fire({
+        icon: 'error',
+        title: 'Algo esta pasando',
+        text: 'Comuniquese con el administrador'
+      })
+    })
+  }
+
+
 }

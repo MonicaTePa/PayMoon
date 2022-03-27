@@ -42,7 +42,7 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
     DepositsComponent,
     RegisterComponent,
     FooterComponent,
-    UpdateInfoComponent
+    UpdateInfoComponent,
     LegalComponent,
     AboutUsComponent
   ],
