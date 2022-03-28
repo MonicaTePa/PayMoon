@@ -31,8 +31,9 @@ export class LoginComponent implements OnInit {
 
   onLoginUser(form: any): void{
     this.authService.login(form.value).subscribe(res => {
+      this.router.navigate(['/miPerfil']);
       Swal.fire({
-        position: 'top-end',
+        position: 'top',
         icon: 'success',
         title: 'Bienvenido otra vez a PayMoon',
         showConfirmButton: false,

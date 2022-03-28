@@ -5,6 +5,10 @@ import { TransactionService } from 'src/app/services/transaction.service';
 import { UserService } from 'src/app/services/user.service';
 import { Card } from 'src/app/models/card.model';
 import { CardService } from 'src/app/services/card.service';
+import { PocketService } from 'src/app/services/pocket.service';
+import { Pocket } from 'src/app/models/pocket.model';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-transfers',
@@ -13,10 +17,10 @@ import { CardService } from 'src/app/services/card.service';
 })
 export class TransfersComponent implements OnInit {
 
-  user_id: string = "623c1917b98cd2ec0b9e7fe3" 
+  user_id: any = localStorage.getItem("id");
+  pocket_id: any = localStorage.getItem("pocket_id");
 
-  //Cadena de prueba
-  // user_id: string = "623cbaf06fc9b149e5c47725" 
+
 
   card_list: Card[] | null = null
   pocket_former_balence: number = 0;
@@ -26,7 +30,7 @@ export class TransfersComponent implements OnInit {
 
   numbersRegex = /^[0-9]+$/;  
   
-  constructor(private fb: FormBuilder, private user_service: UserService, private transaction_service: TransactionService, private card_service: CardService) { 
+  constructor(private fb: FormBuilder, private user_service: UserService, private transaction_service: TransactionService, private card_service: CardService, private pocket_service: PocketService, private router: Router) { 
     this.transferRegisterForm = this.fb.group({
       id_card: [[Validators.required]],
       receiver_phone: ['',[Validators.required, Validators.pattern(this.numbersRegex)]],
@@ -62,7 +66,8 @@ export class TransfersComponent implements OnInit {
           console.log(data.message);
         }else{
           console.log(data);
-          const id_receiver = data;          
+          const id_receiver = data;
+          console.log(id_receiver)
           const transaction : Transaction = {            
             id_payer: this.user_id,
             id_receiver: id_receiver,
@@ -71,19 +76,62 @@ export class TransfersComponent implements OnInit {
             id_card: id_card == "none"?"No aplica":id_card
           }
           this.transaction_service.postTransaction(transaction).subscribe(
-            data =>{
-              console.log(data.message);
+            DataTransfer =>{
+              this.pocket_service.getPocketById(id_receiver).subscribe(
+                dataPocket=>{
+                  const pocket: Pocket = { 
+                    id_user: id_receiver,
+                    balance: dataPocket.balance + transfer_amount,
+                    receptions: dataPocket.receptions + parseInt(transfer_amount),
+                    payments: dataPocket.payments,
+                    deposits: dataPocket.deposits,
+                  }
+                  console.log(dataPocket)
+                  this.pocket_service.putPocket(dataPocket._id, pocket).subscribe(
+                    data=>{
+                      this.router.navigate(['/miPerfil']);
+                    }
+                  )
+
+                }
+              )         
             },error =>{
               console.log("Hubo un error");
               console.log(error);
             }
           );
         }
+        
       },error =>{
         console.log(error);
         console.log("Hubo un error");
       }
     );
+
+    this.pocket_service.getPocketById(this.user_id).subscribe(
+      data=>{
+        const pocket: Pocket = {
+          _id: this.pocket_id,
+          id_user: this.user_id,
+          balance: data.balance - transfer_amount,
+          receptions: data.receptions,
+          payments: data.payments + parseInt(transfer_amount),
+          deposits: data.deposits,
+        }
+        this.pocket_service.putPocket(this.pocket_id, pocket).subscribe(
+          data=>{
+            Swal.fire({
+              position: 'top-end',
+              icon: 'success',
+              title: 'Transacción Realizada',
+              text: 'Su Bolsillo ha sido actualizado',
+              showConfirmButton: false,
+              timer: 1500
+            })
+            })
+          }
+        )
+
 
    
   

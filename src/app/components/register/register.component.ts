@@ -44,7 +44,6 @@ export class RegisterComponent implements OnInit {
     this.authService.register(form.value).subscribe(data => {
       const pocket: Pocket = {id_user: data.dataUser._id}
       this.pocket_service.postPocket(pocket).subscribe(data =>{
-          console.log(data)
           this.router.navigate(['/ingresar']);
           Swal.fire({
             icon: 'success',

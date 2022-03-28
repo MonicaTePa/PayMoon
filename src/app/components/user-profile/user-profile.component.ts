@@ -1,7 +1,7 @@
 import { Component, ComponentFactoryResolver, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
-import { ActivatedRoute } from '@angular/router';
+import { PocketService } from 'src/app/services/pocket.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -11,10 +11,10 @@ import { ActivatedRoute } from '@angular/router';
 export class UserProfileComponent implements OnInit {
 
   user_info : User | null = null;  
-  id: string | any;
+  user_id: any = localStorage.getItem("id");
 
-  constructor( private user_service: UserService, private userPath: ActivatedRoute) { 
-    this.id = this.userPath.snapshot.paramMap.get('id');
+  constructor( private user_service: UserService, private pocket_service: PocketService) { 
+    
   }
 
   ngOnInit(): void {
@@ -22,7 +22,7 @@ export class UserProfileComponent implements OnInit {
   }
 
   loadUserInfo(){
-    this.user_service.getUserById(this.id).subscribe(
+    this.user_service.getUserById(this.user_id).subscribe(
       data=>{
         this.user_info = data;        
         console.log(this.user_info);
@@ -31,6 +31,11 @@ export class UserProfileComponent implements OnInit {
         console.log(error);
       }
     );
+    this.pocket_service.getPocketById(this.user_id).subscribe(
+      data=>{
+        localStorage.setItem("pocket_id", data._id);
+      }
+    )
   }
 
 }

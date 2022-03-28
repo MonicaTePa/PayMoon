@@ -9,7 +9,7 @@ import { PocketService } from 'src/app/services/pocket.service';
 })
 export class UserPocketComponent implements OnInit {
 
-  user_id: String = "623c1917b98cd2ec0b9e7fe3"
+  user_id: any = localStorage.getItem("id");
   pocket_info: Pocket | null = null;
 
   constructor(private pocket_service: PocketService) { }
@@ -21,9 +21,7 @@ export class UserPocketComponent implements OnInit {
   loadPocketInfo(){
     this.pocket_service.getPocketById(this.user_id).subscribe(
       data => {
-        console.log(data);
         this.pocket_info = data;
-        console.log(this.pocket_info);
       },
       error => {
         console.log("Hubo un error");

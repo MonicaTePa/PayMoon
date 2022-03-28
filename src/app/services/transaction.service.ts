@@ -8,7 +8,7 @@ import { Transaction } from '../models/transaction.model';
 })
 export class TransactionService {
 
-  API_URL = 'http://localhost:3000/api/v1/'
+  API_URL = 'http://localhost:3000/api/v1'
   USER_URI = 'transactions'
 
   constructor(private http: HttpClient) { }

@@ -10,9 +10,7 @@ import { UserService } from 'src/app/services/user.service';
 export class UserRegisterInfoComponent implements OnInit {
 
   user_info : User | null = null;
-  user_birth_date: String | null = null;
-  user_id_date: String | null = null;
-  user_id: String = '623c1917b98cd2ec0b9e7fe3'
+  user_id: any = localStorage.getItem("id");
 
   constructor(private user_service: UserService) { }
 
@@ -23,14 +21,7 @@ export class UserRegisterInfoComponent implements OnInit {
   loadUserInfo(){
     this.user_service.getUserById(this.user_id).subscribe(
       data=>{        
-        this.user_info = data;        
-        console.log(this.user_info);
-        console.log(this.user_info?.birth_date)
-        this.user_birth_date = String(this.user_info?.birth_date).substring(0,10);
-        this.user_id_date = String(this.user_info?.id_date).substring(0,10);
-        
-        
-
+        this.user_info = data;     
       },error=>{
         console.log("Hubo un error");
         console.log(error);
