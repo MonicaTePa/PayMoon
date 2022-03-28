@@ -1,4 +1,5 @@
-<app-navbar></app-navbar>
+<!-- <app-navbar></app-navbar> -->
+<div class="background"></div>
 <div class="page-addCard-container col-12">
   <p class="title-page">Agregar nueva tarjeta</p>
   <div class="form-card">
@@ -34,7 +35,10 @@
         <label for="exampleInputEmail1" class="form-label">Nombre tarjeta:</label>
         <input formControlName = "card_name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
       </div>
-      <button type="submit" class="btn btn-primary">Guardar tarjeta</button>
+      <div class="button-container">
+        <button type="submit" class="btn btn-primary">Guardar tarjeta</button>
+        <button type="submit" class="btn btn-primary" routerLink="/miPerfil">Cancelar</button>
+      </div>      
     </form>
   </div>
 </div>

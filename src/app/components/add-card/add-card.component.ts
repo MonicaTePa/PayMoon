@@ -3,6 +3,8 @@ import { FormGroup,FormBuilder, Validators } from '@angular/forms';
 import { Card } from 'src/app/models/card.model';
 import { CardService } from 'src/app/services/card.service'; 
 import { GlobalConstants } from 'src/app/common/global-constants';
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-card',
@@ -21,7 +23,7 @@ export class AddCardComponent implements OnInit {
   numbersRegex = /^[0-9]*$/;  
   emailRegex =  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/; 
 
-  constructor( private fb: FormBuilder, private card_service:CardService) {
+  constructor( private fb: FormBuilder, private card_service:CardService, private router:Router) {
     this.cardRegisterForm = this.fb.group({
       card_number: ['',[Validators.required, Validators.pattern(this.numbersRegex)]],
       card_type: ['', [Validators.required, Validators.pattern(this.lettersRegex)]],
@@ -50,16 +52,39 @@ export class AddCardComponent implements OnInit {
 
     this.card_service.postCard(cardData).subscribe(
       data =>{
-        console.log(data);
-        console.log(cardData);
+        if(data.answer==="OK"){
+          Swal.fire({
+            title: !data.state?undefined:data.message,
+            text: !data.state?data.message:undefined,   
+            icon: !data.state?undefined:'success',             
+            showClass: {
+              popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+              popup: 'animate__animated animate__fadeOutUp'              
+          }}); 
+          if(!data.state){
+            this.router.navigate(['/miPerfil']);
+          }
+        }
+        
+        // console.log(data);
+        // console.log(cardData);
 
       },error =>{
-        console.log("Hubo un error")
-        console.log(error);
-
+        // console.log("Hubo un error")
+        // console.log(error);
+        Swal.fire({
+          title: 'Lo sentimos',
+          text: 'Error en el Sistema. Inténtalo más tarde',   
+          icon: 'error',             
+          showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+          },
+          hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+        }}); 
       }
     );
   }
-  
-
 }

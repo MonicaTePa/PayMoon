@@ -13,7 +13,6 @@ import { UserNavbarComponent } from './components/user-navbar/user-navbar.compon
 import { Page404Component } from './components/page404/page404.component';
 import { HomeComponent } from './components/home/home.component';
 import { AddCardComponent } from './components/add-card/add-card.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { UserRegisterInfoComponent } from './components/user-register-info/user-register-info.component';
 import { UserPocketComponent } from './components/user-pocket/user-pocket.component';
 import { LoginComponent } from './components/login/login.component';
@@ -25,6 +24,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { UpdateInfoComponent } from './components/update-info/update-info.component';
 import { LegalComponent } from './components/legal/legal.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,8 +37,7 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
     UserNavbarComponent, 
     Page404Component, 
     HomeComponent, 
-    AddCardComponent, 
-    NavbarComponent, 
+    AddCardComponent,    
     UserRegisterInfoComponent, 
     UserPocketComponent, 
     LoginComponent, 
@@ -44,13 +46,17 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
     DepositsComponent,
     RegisterComponent,
     FooterComponent,
-    UpdateInfoComponent
+    UpdateInfoComponent,   
+    NavbarComponent,
+    AboutUsComponent,
+    LegalComponent 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

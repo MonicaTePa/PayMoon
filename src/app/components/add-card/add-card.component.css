@@ -15,3 +15,53 @@
   display: flex;
   justify-content: center;
 }
+
+
+  
+@media only screen and (min-width: 801px){
+  .background{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: -1;
+    background-image: url('../../../assets/img/user-register-info/desktop-background2.png');
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+@media only screen and (max-width: 800px){
+  .background{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: -1;
+    background-image: url('../../../assets/img/user-register-info/mobile-background1.png');
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+button{
+  background-color: #673fd6;
+  border: none;
+  font-weight: bold;  
+  margin: 0.5em; 
+  
+}
+
+button:hover{
+  background-color: #8f58d3;   
+}
+
+   
+
+
+
+
+
+
+
+
+
+
