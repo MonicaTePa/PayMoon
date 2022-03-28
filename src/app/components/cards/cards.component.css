@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
-  
 }
 
 .title-page {
@@ -27,11 +26,12 @@ button {
   font-size: xx-large;
   font-weight: 700;
   color: #3927D0;
-  padding-left: 160px;
+  padding-left: 35%;
 }
 
 .card {
   background-image: url("/assets/img/cards/credit-card.png");
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
@@ -47,17 +47,19 @@ button {
 .card1 {
   display: flex;
   justify-content: center;
-  
+
 }
 
 .card-name {
-  padding-top: 250px;
-  padding-left: 330px;
+  padding-top: 50%;
+  padding-left: 10%;
+  position: absolute;
 }
 
 .card-number {
-  padding-top: 40px;
-  padding-left: 200px;
+  padding-top: 60%;
+  padding-left: 10%;
+  position: absolute;
 }
 
 .change-number-card {
@@ -116,4 +118,138 @@ button {
 
 .delete-card {
   margin-left: 60px;
+}
+
+form {
+  padding-left: 40px;
+}
+
+.add-card {
+  padding-top: 50px;
+}
+
+@media only screen and (max-width: 500px) {
+  .card1 {
+    display: block;
+    align-items: center;
+
+  }
+
+  .card {
+    background-image: url("/assets/img/cards/credit-card.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 200px;
+    width: 100%;
+    font-size: medium;
+    border: none;
+  }
+
+  .title-page-text {
+    font-size: 25px;
+  }
+
+  .title-page {
+    display: block;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .add-card {
+    padding-top: 50px;
+    display: flex;
+    padding-left: 45%;
+  }
+
+  .card-name,
+  .card-number {
+    display: none;
+  }
+
+  form {
+    padding-left: 30%;
+  }
+
+  .card-information {
+    padding-top: 40px;
+    width: 80%;
+  }
+
+  .name-card-container {
+    width: 80%;
+    padding-left: 30%;
+  }
+
+  .change-number-card {
+    width: 80%;
+    margin-bottom: 40%;
+  }
+}
+
+@media only screen and (max-width: 1350px) {
+  .card-name {
+    padding-top: 70%;
+    padding-left: 10%;
+    position: absolute;
+    font-size: medium;
+  }
+
+  .card-number {
+    padding-top: 75%;
+    padding-left: 10%;
+    position: absolute;
+    font-size: medium;
+  }
+}
+
+@media only screen and (max-width: 915px) {
+  .card-name {
+    padding-top: 90%;
+    padding-left: 10%;
+    position: absolute;
+    font-size: medium;
+  }
+
+  .card-number {
+    padding-top: 95%;
+    padding-left: 10%;
+    position: absolute;
+    font-size: medium;
+  }
+}
+
+@media only screen and (max-width: 676px) {
+  .card-name {
+    padding-top: 110%;
+    padding-left: 10%;
+    position: absolute;
+    font-size: medium;
+  }
+
+  .card-number {
+    padding-top: 115%;
+    padding-left: 10%;
+    position: absolute;
+    font-size: medium;
+  }
+}
+
+@media only screen and (max-width: 555px) {
+  .card-name {
+    padding-top: 123%;
+    padding-left: 10%;
+    position: absolute;
+    font-size: medium;
+  }
+
+  .card-number {
+    padding-top: 130%;
+    padding-left: 10%;
+    position: absolute;
+    font-size: medium;
+  }
 }

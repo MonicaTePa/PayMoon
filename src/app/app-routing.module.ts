@@ -14,6 +14,9 @@ import { HistoryComponent } from './components/history/history.component';
 import { DepositsComponent } from './components/deposits/deposits.component';
 import { RegisterComponent } from './components/register/register.component';
 import { UpdateInfoComponent } from './components/update-info/update-info.component';
+import { LegalComponent } from './components/legal/legal.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path: 'miCuenta', component: UserDesktopComponent},
@@ -28,7 +31,11 @@ const routes: Routes = [
   {path: 'depositos', component: DepositsComponent },
   {path: 'registro', component: RegisterComponent },
   {path: 'updateInfo', component: UpdateInfoComponent},
-  {path:'**',component:Page404Component}
+  { path: 'legal', component: LegalComponent },
+  {path:'**',component:Page404Component},
+  {path: 'paymoon', component: AboutUsComponent },
+  {path: 'updateInfo', component: UpdateInfoComponent},
+  { path: '**', component: Page404Component },
 ];
 
 @NgModule({

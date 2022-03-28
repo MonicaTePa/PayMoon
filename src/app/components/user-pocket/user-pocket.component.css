@@ -118,6 +118,15 @@
     border: none;
     max-width: 380px;
   }
+  .user-pocket-container{
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+  .footer {
+    padding-top: 3%;
+    position: absolute;
+    width: 100%;
+  }
 }
 
 @media only screen and (min-width: 761px) {
@@ -242,5 +251,14 @@
   .user-pocket-container .user-pocket-button:hover {
     background-color: #3927d0;
   }
-
+  .user-pocket-container{
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  .footer {
+    padding-top: 3%;
+    position: absolute;
+    width: 100%;
+  }
 }
+

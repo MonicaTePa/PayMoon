@@ -51,13 +51,14 @@ text {
   width: 40px;
   height: 40px;
 }
-.footer{
+
+.footer {
   position: absolute;
   padding-top: 720px;
   width: 100%;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 2000px) {
   body {
     background-image: url(/assets/img/home/templatec-16.png);
     margin-left: -10px;
@@ -78,8 +79,14 @@ text {
     text-decoration: none;
     color: transparent;
     margin: 3px;
-    margin-top: 60%;
+    margin-top: 38%;
     margin-left: 20px;
+  }
+
+  .footer {
+    position: absolute;
+    padding-top: 800px;
+    width: 100%;
   }
 
   .rrss1 {
@@ -101,5 +108,524 @@ text {
     padding: 0px;
     width: 40px;
     height: 40px;
+  }
+}
+
+@media only screen and (max-width: 1665px) {
+  body {
+    background-image: url(/assets/img/home/templatec-16.png);
+    margin-left: -10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0%;
+    width: 100%;
+    position: absolute;
+  }
+
+  text {
+    color: white;
+  }
+
+  .rrss {
+    display: flex;
+    justify-content: space-around 3px;
+    text-decoration: none;
+    color: transparent;
+    margin: 3px;
+    margin-top: 38%;
+    margin-left: 20px;
+  }
+
+  .footer {
+    position: absolute;
+    padding-top: 680px;
+    width: 100%;
+  }
+
+  .rrss1 {
+    background-image: url(/assets/img/home/RRSS-01.png);
+    padding: 0px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .rrss2 {
+    background-image: url(/assets/img/home/RRSS-02.png);
+    padding: 0px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .rrss3 {
+    background-image: url(/assets/img/home/RRSS-03.png);
+    padding: 0px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media only screen and (max-width: 1350px) {
+  body {
+    background-image: url(/assets/img/home/templatec-16.png);
+    margin-left: -10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0%;
+    width: 100%;
+    position: absolute;
+  }
+
+  text {
+    color: white;
+  }
+
+  .rrss {
+    display: flex;
+    justify-content: space-around 3px;
+    text-decoration: none;
+    color: transparent;
+    margin: 3px;
+    margin-top: 40%;
+    margin-left: 20px;
+  }
+
+  .footer {
+    position: absolute;
+    padding-top: 580px;
+    width: 100%;
+  }
+
+  .rrss1 {
+    background-image: url(/assets/img/home/RRSS-01.png);
+    padding: 0px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .rrss2 {
+    background-image: url(/assets/img/home/RRSS-02.png);
+    padding: 0px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .rrss3 {
+    background-image: url(/assets/img/home/RRSS-03.png);
+    padding: 0px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  body {
+    background-image: url(/assets/img/home/templatec-16.png);
+    margin-left: -10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0%;
+    width: 100%;
+    position: absolute;
+  }
+
+  text {
+    color: white;
+  }
+
+  .rrss {
+    display: flex;
+    justify-content: space-around 3px;
+    text-decoration: none;
+    color: transparent;
+    margin: 3px;
+    margin-top: 40%;
+    margin-left: 20px;
+  }
+
+  .footer {
+    position: absolute;
+    padding-top: 530px;
+    width: 100%;
+  }
+
+  .rrss1 {
+    background-image: url(/assets/img/home/RRSS-01.png);
+    padding: 0px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .rrss2 {
+    background-image: url(/assets/img/home/RRSS-02.png);
+    padding: 0px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .rrss3 {
+    background-image: url(/assets/img/home/RRSS-03.png);
+    padding: 0px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media only screen and (max-width: 817px) {
+  body {
+    background-image: url(/assets/img/home/templatec-16.png);
+    margin-left: -10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0%;
+    width: 100%;
+    position: absolute;
+  }
+
+  text {
+    color: white;
+  }
+
+  .rrss {
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-around 3px;
+    text-decoration: none;
+    color: transparent;
+    margin: 3px;
+    margin-top: 60%;
+    margin-left: 20px;
+  }
+
+  .footer {
+    position: absolute;
+    padding-top: 530px;
+    width: 100%;
+  }
+
+  .rrss1 {
+    background-image: url(/assets/img/home/RRSS-01.png);
+    padding: 0px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .rrss2 {
+    background-image: url(/assets/img/home/RRSS-02.png);
+    padding: 0px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .rrss3 {
+    background-image: url(/assets/img/home/RRSS-03.png);
+    padding: 0px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media only screen and (max-width: 710px) {
+  body {
+    background-image: url(/assets/img/home/templatec-16.png);
+    margin-left: -10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0%;
+    width: 100%;
+    position: absolute;
+  }
+
+  text {
+    color: white;
+  }
+
+  .rrss {
+    padding-top: 45px;
+    display: flex;
+    justify-content: space-around 3px;
+    text-decoration: none;
+    color: transparent;
+    margin: 3px;
+    margin-top: 60%;
+    margin-left: 20px;
+  }
+
+  .footer {
+    position: absolute;
+    padding-top: 500px;
+    width: 100%;
+  }
+
+  .rrss1 {
+    background-image: url(/assets/img/home/RRSS-01.png);
+    padding: 0px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .rrss2 {
+    background-image: url(/assets/img/home/RRSS-02.png);
+    padding: 0px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .rrss3 {
+    background-image: url(/assets/img/home/RRSS-03.png);
+    padding: 0px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  body {
+    background-image: url(/assets/img/home/templatec-16.png);
+    margin-left: -10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0%;
+    width: 100%;
+    position: absolute;
+  }
+
+  text {
+    color: white;
+  }
+
+  .rrss {
+    padding-top: 45px;
+    display: flex;
+    justify-content: space-around 3px;
+    text-decoration: none;
+    color: transparent;
+    margin: 3px;
+    margin-top: 60%;
+    margin-left: 20px;
+  }
+
+  .footer {
+    position: absolute;
+    padding-top: 500px;
+    width: 100%;
+  }
+
+  .rrss1 {
+    background-image: url(/assets/img/home/RRSS-01.png);
+    padding: 0px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .rrss2 {
+    background-image: url(/assets/img/home/RRSS-02.png);
+    padding: 0px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .rrss3 {
+    background-image: url(/assets/img/home/RRSS-03.png);
+    padding: 0px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media only screen and (max-width: 598px) {
+  .rrss {
+    padding-top: 57px;
+    display: flex;
+    justify-content: space-around 3px;
+    text-decoration: none;
+    color: transparent;
+    margin: 3px;
+    margin-top: 60%;
+    margin-left: 20px;
+  }
+
+  .footer {
+    position: absolute;
+    padding-top: 500px;
+    width: 100%;
+  }
+
+  .rrss1 {
+    background-image: url(/assets/img/home/RRSS-01.png);
+    padding: 0px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .rrss2 {
+    background-image: url(/assets/img/home/RRSS-02.png);
+    padding: 0px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .rrss3 {
+    background-image: url(/assets/img/home/RRSS-03.png);
+    padding: 0px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media only screen and (max-width: 566px) {
+  .rrss {
+    padding-top: 77px;
+    display: flex;
+    justify-content: space-around 3px;
+    text-decoration: none;
+    color: transparent;
+    margin: 3px;
+    margin-top: 60%;
+    margin-left: 20px;
+  }
+
+  .footer {
+    position: absolute;
+    padding-top: 500px;
+    width: 100%;
+  }
+
+  .rrss1 {
+    background-image: url(/assets/img/home/RRSS-01.png);
+    padding: 0px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .rrss2 {
+    background-image: url(/assets/img/home/RRSS-02.png);
+    padding: 0px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .rrss3 {
+    background-image: url(/assets/img/home/RRSS-03.png);
+    padding: 0px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media only screen and (max-width: 526px) {
+  .rrss {
+    padding-top: 100px;
+    display: flex;
+    justify-content: space-around 3px;
+    text-decoration: none;
+    color: transparent;
+    margin: 3px;
+    margin-top: 60%;
+    margin-left: 20px;
+  }
+
+  .footer {
+    position: absolute;
+    padding-top: 500px;
+    width: 100%;
+  }
+
+  .rrss1 {
+    background-image: url(/assets/img/home/RRSS-01.png);
+    padding: 0px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .rrss2 {
+    background-image: url(/assets/img/home/RRSS-02.png);
+    padding: 0px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .rrss3 {
+    background-image: url(/assets/img/home/RRSS-03.png);
+    padding: 0px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .rrss {
+    padding-top: 124px;
+    display: flex;
+    justify-content: space-around 3px;
+    text-decoration: none;
+    color: transparent;
+    margin: 3px;
+    margin-top: 60%;
+    margin-left: 20px;
+  }
+
+  .footer {
+    position: absolute;
+    padding-top: 440px;
+    width: 100%;
+  }
+
+  .rrss1 {
+    background-image: url(/assets/img/home/RRSS-01.png);
+    padding: 0px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .rrss2 {
+    background-image: url(/assets/img/home/RRSS-02.png);
+    padding: 0px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .rrss3 {
+    background-image: url(/assets/img/home/RRSS-03.png);
+    padding: 0px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .rrss {
+    padding-top: 200px;
+    display: flex;
+    justify-content: space-around 3px;
+    text-decoration: none;
+    color: transparent;
+    margin: 3px;
+    margin-top: 60%;
+    margin-left: 20px;
+  }
+
+  .footer {
+    position: absolute;
+    padding-top: 420px;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .rrss {
+    padding-top: 150px;
+    display: flex;
+    justify-content: space-around 3px;
+    text-decoration: none;
+    color: transparent;
+    margin: 3px;
+    margin-top: 60%;
+    margin-left: 20px;
+  }
+
+  .footer {
+    position: absolute;
+    padding-top: 430px;
+    width: 100%;
   }
 }

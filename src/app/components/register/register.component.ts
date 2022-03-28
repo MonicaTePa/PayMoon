@@ -7,6 +7,8 @@ import { Pocket } from 'src/app/models/pocket.model';
 import { dashCaseToCamelCase } from '@angular/compiler/src/util';
 
 
+//import { FormBuilder,FormGroup, Validators } from '@angular/forms';
+//import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
