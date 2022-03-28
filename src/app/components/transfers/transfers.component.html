@@ -29,6 +29,10 @@
         <div class="card-payment-button">
           <button type="submit">Realizar transferencia</button>
         </div>
+        <div class="paypal-payment-button">
+          <a href="http://localhost:5000" src><img src="assets/img/transfers/paypal.png" class="paypal-img"> </a>
+ 
+         </div>
         <div class="card-cancel-button">
           <button routerLink="/miPerfil">Cancelar</button>
         </div>
@@ -37,3 +41,14 @@
     
   </div>
 </main>
+<script>
+  const checkout = document.getElementById("checkout");
+  checkout.addEventListener("click", async () => {
+    const response = await fetch("http://localhost:5000/create-order", {
+      method: "POST",
+    });
+    const data = await response.json();
+    window.location.href = data.links[1].href
+  });
+
+</script>

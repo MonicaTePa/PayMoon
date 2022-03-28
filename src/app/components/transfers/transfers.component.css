@@ -49,7 +49,15 @@
   font-size: x-small;
 }
 
-
+.paypal-img{
+  width: 90px;
+  height: 45px;
+  
+}
+.paypal-payment-button{
+  display: flex;
+  justify-content: center;
+}
 
 @media only screen and (max-width: 760px) {
 
