@@ -5,11 +5,10 @@ import { TransactionService } from 'src/app/services/transaction.service';
 import { UserService } from 'src/app/services/user.service';
 import { Card } from 'src/app/models/card.model';
 import { CardService } from 'src/app/services/card.service';
-import { Pocket } from 'src/app/models/pocket.model';
 import { PocketService } from 'src/app/services/pocket.service';
-import { GlobalConstants } from 'src/app/common/global-constants';
+import { Pocket } from 'src/app/models/pocket.model';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
-
 
 @Component({
   selector: 'app-transfers',
@@ -18,19 +17,20 @@ import Swal from 'sweetalert2';
 })
 export class TransfersComponent implements OnInit {
 
-  //user_id: string = "623c1917b98cd2ec0b9e7fe3" 
-  user_id: string = new GlobalConstants().getUserId();
+  user_id: any = localStorage.getItem("id");
+  pocket_id: any = localStorage.getItem("pocket_id");
 
-  //Cadena de prueba
-  // user_id: string = "623cbaf06fc9b149e5c47725" 
+
 
   card_list: Card[] | null = null
+  pocket_former_balence: number = 0;
+  latest_deposite: number = 0;
 
   transferRegisterForm: FormGroup;
 
   numbersRegex = /^[0-9]+$/;  
   
-  constructor(private fb: FormBuilder, private user_service: UserService, private transaction_service: TransactionService, private card_service: CardService, private pocket_service: PocketService) { 
+  constructor(private fb: FormBuilder, private user_service: UserService, private transaction_service: TransactionService, private card_service: CardService, private pocket_service: PocketService, private router: Router) { 
     this.transferRegisterForm = this.fb.group({
       id_card: [[Validators.required]],
       receiver_phone: ['',[Validators.required, Validators.pattern(this.numbersRegex)]],
@@ -55,190 +55,86 @@ export class TransfersComponent implements OnInit {
 
   makeTransfer(){
     const phone_number = this.transferRegisterForm.get('receiver_phone')?.value
-    const transfer_amount = parseInt(this.transferRegisterForm.get('amount')?.value);
-    const id_card = this.transferRegisterForm.get('id_card')?.value       
+    const transfer_amount = this.transferRegisterForm.get('amount')?.value
+    const id_card = this.transferRegisterForm.get('id_card')?.value
+
+    
 
     this.user_service.getUserByPhone(phone_number).subscribe(
       data =>{
         if(data.message){
-          //console.log(data.message);
-          Swal.fire({            
-            text: 'El número ingresado no coincide con el de algún usuario PAYMOON ',                           
-            showClass: {
-              popup: 'animate__animated animate__fadeInDown'
-            },
-            hideClass: {
-              popup: 'animate__animated animate__fadeOutUp'
-          }});
-        }else{          
-          //console.log(data);
-          const id_receiver = data;         
+          console.log(data.message);
+        }else{
+          console.log(data);
+          const id_receiver = data;
+          console.log(id_receiver)
           const transaction : Transaction = {            
             id_payer: this.user_id,
             id_receiver: id_receiver,
-            amount: transfer_amount?transfer_amount:0,
-            type: id_card === "none"?"BOLSILLO":"TARJETA",
-            id_card: id_card === "none"?"NO APLICA":id_card
-          }  
-          
-          this.pocket_service.getPocketById(transaction.id_payer).subscribe(
-            data =>{
-              let payer_pocket = data;
-              if((payer_pocket.balance < transaction.amount) && transaction.type === "BOLSILLO"){
-                Swal.fire({                 
-                  text: 'Su bolsillo no tiene saldo suficiente para esta transferencia',                                
-                  showClass: {
-                    popup: 'animate__animated animate__fadeInDown'
-                  },
-                  hideClass: {
-                    popup: 'animate__animated animate__fadeOutUp'
-                }}); 
-              }else{
-                this.pocket_service.getPocketById(transaction.id_receiver).subscribe(
-                  data =>{
-                    let receiver_pocket = data;
-                    //console.log(receiver_pocket);
-
-
-                    //console.log(payer_pocket);
-                    payer_pocket.former_balance = payer_pocket.balance;
-                    payer_pocket.balance = (transaction.type === "BOLSILLO")?(payer_pocket.balance - transaction.amount): payer_pocket.balance
-                    payer_pocket.payments = (transaction.type === "BOLSILLO")?(payer_pocket.payments + transaction.amount): payer_pocket.payments
-                    //console.log(payer_pocket);
-
-                    // console.log(receiver_pocket);
-                    receiver_pocket.former_balance = receiver_pocket.balance;
-                    receiver_pocket.balance  = receiver_pocket.balance + transaction.amount;
-                    receiver_pocket.receptions = receiver_pocket.receptions + transaction.amount;
-                    // console.log(receiver_pocket);
-
-                    this.transaction_service.postTransaction(transaction).subscribe(
-                      data =>{
-                        const id_transaction = data.id
-                        this.pocket_service.putPocket(receiver_pocket._id, receiver_pocket).subscribe(
-                          data =>{
-                            this.pocket_service.putPocket(payer_pocket._id,payer_pocket).subscribe(
-                              data =>{
-                                Swal.fire({
-                                  title: 'Transferencia existosa',                             
-                                  icon: 'success',             
-                                  showClass: {
-                                    popup: 'animate__animated animate__fadeInDown'
-                                  },
-                                  hideClass: {
-                                    popup: 'animate__animated animate__fadeOutUp'
-                                }});
-                              }
-                              , error =>{ 
-                                this.transaction_service.deleteTransaction(id_transaction).subscribe(
-                                  data =>{},
-                                  error =>{
-                                    Swal.fire({
-                                      title: 'Lo sentimos',
-                                      text: 'Error en el Sistema. Inténtalo más tarde',   
-                                      icon: 'error',             
-                                      showClass: {
-                                        popup: 'animate__animated animate__fadeInDown'
-                                      },
-                                      hideClass: {
-                                        popup: 'animate__animated animate__fadeOutUp'
-                                    }});
-                                  }
-                                ) ;                         
-                                Swal.fire({
-                                  title: 'Lo sentimos',
-                                  text: 'Error en el Sistema. Inténtalo más tarde',   
-                                  icon: 'error',             
-                                  showClass: {
-                                    popup: 'animate__animated animate__fadeInDown'
-                                  },
-                                  hideClass: {
-                                    popup: 'animate__animated animate__fadeOutUp'
-                                }});
-                              }
-                            );
-    
-                          }, error =>{
-                            Swal.fire({
-                              title: 'Lo sentimos',
-                              text: 'Error en el Sistema. Inténtalo más tarde',   
-                              icon: 'error',             
-                              showClass: {
-                                popup: 'animate__animated animate__fadeInDown'
-                              },
-                              hideClass: {
-                                popup: 'animate__animated animate__fadeOutUp'
-                            }});
-                          }
-                        ); 
-
-
-                      }, error =>{                        
-                         Swal.fire({
-                              title: 'Lo sentimos',
-                              text: 'Error en el Sistema. Inténtalo más tarde',   
-                              icon: 'error',             
-                              showClass: {
-                                popup: 'animate__animated animate__fadeInDown'
-                              },
-                              hideClass: {
-                                popup: 'animate__animated animate__fadeOutUp'
-                            }});
-                      }
-                    );                                
-
-                  },error =>{
-                    Swal.fire({
-                      title: 'Lo sentimos',
-                      text: 'Error en el Sistema. Inténtalo más tarde',   
-                      icon: 'error',             
-                      showClass: {
-                        popup: 'animate__animated animate__fadeInDown'
-                      },
-                      hideClass: {
-                        popup: 'animate__animated animate__fadeOutUp'
-                    }}); 
+            amount: transfer_amount,
+            type: id_card == "none"?"Bolsillo":"Tarjeta",
+            id_card: id_card == "none"?"No aplica":id_card
+          }
+          this.transaction_service.postTransaction(transaction).subscribe(
+            DataTransfer =>{
+              this.pocket_service.getPocketById(id_receiver).subscribe(
+                dataPocket=>{
+                  const pocket: Pocket = { 
+                    id_user: id_receiver,
+                    balance: dataPocket.balance + transfer_amount,
+                    receptions: dataPocket.receptions + parseInt(transfer_amount),
+                    payments: dataPocket.payments,
+                    deposits: dataPocket.deposits,
                   }
-                  
-                );
-              }             
-            }, error =>{
+                  console.log(dataPocket)
+                  this.pocket_service.putPocket(dataPocket._id, pocket).subscribe(
+                    data=>{
+                      this.router.navigate(['/miPerfil']);
+                    }
+                  )
+
+                }
+              )         
+            },error =>{
               console.log("Hubo un error");
               console.log(error);
-              Swal.fire({
-                title: 'Lo sentimos',
-                text: 'Error en el Sistema. Inténtalo más tarde',   
-                icon: 'error',             
-                showClass: {
-                  popup: 'animate__animated animate__fadeInDown'
-                },
-                hideClass: {
-                  popup: 'animate__animated animate__fadeOutUp'
-              }}); 
             }
           );
-          
         }
-      },error =>{       
-        console.log("Hubo un error");
+        
+      },error =>{
         console.log(error);
-        Swal.fire({
-          title: 'Lo sentimos',
-          text: 'Error en el Sistema. Inténtalo más tarde',   
-          icon: 'error',             
-          showClass: {
-            popup: 'animate__animated animate__fadeInDown'
-          },
-          hideClass: {
-            popup: 'animate__animated animate__fadeOutUp'
-        }}); 
+        console.log("Hubo un error");
       }
-    );         
+    );
+
+    this.pocket_service.getPocketById(this.user_id).subscribe(
+      data=>{
+        const pocket: Pocket = {
+          _id: this.pocket_id,
+          id_user: this.user_id,
+          balance: data.balance - transfer_amount,
+          receptions: data.receptions,
+          payments: data.payments + parseInt(transfer_amount),
+          deposits: data.deposits,
+        }
+        this.pocket_service.putPocket(this.pocket_id, pocket).subscribe(
+          data=>{
+            Swal.fire({
+              position: 'top-end',
+              icon: 'success',
+              title: 'Transacción Realizada',
+              text: 'Su Bolsillo ha sido actualizado',
+              showConfirmButton: false,
+              timer: 1500
+            })
+            })
+          }
+        )
+
+
+   
+  
   }
-
- 
-
-  
-  
 
 }

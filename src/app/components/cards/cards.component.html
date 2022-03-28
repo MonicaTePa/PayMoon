@@ -1,20 +1,17 @@
-<!-- <app-navbar></app-navbar> -->
+<app-navbar></app-navbar>
 <div class="page-cards-container">
   <section class="title-page">
     <p class="title-page-text">Mis tarjetas</p>
-    <abbr title="Agregar tarjeta"> <button class="add-card" routerLink="/agregarTarjeta"><img src="/assets/img/cards/add.png"
-          alt="icono de agregar"></button></abbr>
+    <abbr title="Agregar tarjeta"> <button class="add-card" routerLink="/agregarTarjeta"><img
+          src="/assets/img/cards/add.png" alt="icono de agregar"></button></abbr>
   </section>
 
   <section class="card1">
-    <div class="card col-6">     
-      
-      
+    <div class="card col-4">
       <p class="card-name">Banco</p>
       <p class="card-number">xxxxxxxx1078</p>
-     
     </div>
-    <div class="card-information col-4">
+    <div class="card-information col-6">
       <form>
         <fieldset disabled>
           <div class="mb-3">
@@ -31,27 +28,30 @@
           </div>
         </fieldset>
       </form>
-      <button class="change-number-card">Cambiar nombre de la tarjeta</button>
-      <abbr title="Eliminar tarjeta"> <button class="delete-card"><img src="/assets/img/cards/delete.png"
-            alt=""></button></abbr>
-      <br />
-      <div ng-show="formVisibility" class="row g-3 align-items-center">
-        <div class="col-auto">
-          <label for="inputtext6" class="col-form-label">Apodo</label>
+      <div class="name-card-container">
+        <button class="change-number-card">Cambiar nombre de la tarjeta</button>
+        <abbr title="Eliminar tarjeta"> <button class="delete-card"><img src="/assets/img/cards/delete.png"
+              alt=""></button></abbr>
+        <br />
+        <div ng-show="formVisibility" class="row g-3 align-items-center">
+          <div class="col-auto">
+            <label for="inputtext6" class="col-form-label">Apodo</label>
+          </div>
+          <div class="col-auto">
+            <input type="text" id="inputtext6" class="form-control" aria-describedby="passwordHelpInline">
+          </div>
+          <div class="col-auto">
+            <span id="passwordHelpInline" class="form-text">
+              Debe ser una palabra sin acentos ni caracteres especiales.
+            </span>
+          </div>
         </div>
-        <div class="col-auto">
-          <input type="text" id="inputtext6" class="form-control" aria-describedby="passwordHelpInline">
+        <div class="buttons-save-cancel">
+          <button type="button" class="btn btn-outline-primary">Guardar</button>
+          <button type="button" class="btn btn-outline-danger">Cancelar</button>
         </div>
-        <div class="col-auto">
-          <span id="passwordHelpInline" class="form-text">
-            Debe ser una palabra sin acentos ni caracteres especiales.
-          </span>
-        </div>
-      </div>
-      <div class="buttons-save-cancel">
-        <button type="button" class="btn btn-outline-primary">Guardar</button>
-        <button type="button" class="btn btn-outline-danger" routerLink="/miPerfil">Cancelar</button>
       </div>
     </div>
   </section>
 </div>
+<app-footer class="footer"></app-footer>

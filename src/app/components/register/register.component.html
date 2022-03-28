@@ -13,7 +13,7 @@
                     Registra tus datos
                   </p>
                 </section>
-                <form [formGroup] = "userRegisterForm" (ngSubmit)="userRegister()">
+                <form #frmRegister="ngForm" [formGroup] = "userRegisterForm" (ngSubmit)="onUserRegister(frmRegister)">
                   <div class="form-outline form-white mb-4">
                     <input formControlName="full_name" type="text" id="typeEmailX" placeholder="Nombre"
                       class="form-control form-control-lg" />

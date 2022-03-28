@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
-import { GlobalConstants } from 'src/app/common/global-constants';
 
 @Component({
   selector: 'app-user-register-info',
@@ -11,10 +10,9 @@ import { GlobalConstants } from 'src/app/common/global-constants';
 export class UserRegisterInfoComponent implements OnInit {
 
   user_info : User | null = null;
-  user_birth_date: String | null = null;
-  user_id_date: String | null = null;
-  //user_id: String = '623c1917b98cd2ec0b9e7fe3'
-  user_id: string = new GlobalConstants().getUserId();
+  user_id: any = localStorage.getItem("id");
+  user_birth_date: string | null = null;
+  user_id_date: string | null = null;
 
   constructor(private user_service: UserService) { }
 
@@ -33,6 +31,7 @@ export class UserRegisterInfoComponent implements OnInit {
         
         
 
+        //this.user_info = data;     
       },error=>{
         console.log("Hubo un error");
         console.log(error);

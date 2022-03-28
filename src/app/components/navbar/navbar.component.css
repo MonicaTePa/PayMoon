@@ -38,26 +38,6 @@ li {
 .accordion {
   display: none;
 }
-#text-navbar-1:hover{
-  padding: 12px;
-  box-shadow: inset 100px 0 0 0 #673fd7;
-  color: white;
-}
-#text-navbar-2:hover{
-  padding: 12px;
-  box-shadow: inset 100px 0 0 0 #673fd7;
-  color: white;
-}
-#text-navbar-3:hover{
-  padding: 12px;
-  box-shadow: inset 100px 0 0 0 #673fd7;
-  color: white;
-}
-#text-navbar-4:hover{
-  padding: 12px;
-  box-shadow: inset 100px 0 0 0 #673fd7;
-  color: white;
-}
 
 @media only screen and (max-width: 700px) {
   .page-navbar-container {

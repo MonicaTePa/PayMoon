@@ -9,7 +9,7 @@ import { Login } from '../models/login.model';
 })
 export class UserService {
 
-  API_URL = 'http://localhost:3000/api/v1/'
+  API_URL = 'http://localhost:3000/api/v1'
   USER_URI = 'users'
 
   constructor( private http: HttpClient ) {}

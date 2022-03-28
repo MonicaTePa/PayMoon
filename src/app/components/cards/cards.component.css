@@ -2,16 +2,8 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
+
 }
-
-.card-info-container{
-  width:100%;
-  height:100px;
-  background-color: black;
-}
-
-
-
 
 .title-page {
   display: flex;
@@ -39,7 +31,7 @@ button {
 }
 
 .card {
-  /* background-image: url("/assets/img/cards/credit-card.png"); */
+  background-image: url("/assets/img/cards/credit-card.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;

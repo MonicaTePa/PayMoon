@@ -5,6 +5,9 @@ import { PocketService } from 'src/app/services/pocket.service';
 import { UserService } from 'src/app/services/user.service';
 import { Pocket } from 'src/app/models/pocket.model';
 import { dashCaseToCamelCase } from '@angular/compiler/src/util';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
+import Swal from 'sweetalert2';
 
 
 //import { FormBuilder,FormGroup, Validators } from '@angular/forms';
@@ -22,7 +25,7 @@ export class RegisterComponent implements OnInit {
   NUMBER_REGEX = /^[0-9]*$/;  
   EMAIL_REGEX =  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/; 
 
-  constructor( private fb: FormBuilder, private user_service: UserService, private pocket_service: PocketService ) { 
+  constructor( private fb: FormBuilder, private user_service: UserService, private pocket_service: PocketService, private authService: AuthService, private router: Router) { 
     this.userRegisterForm = this.fb.group({
       full_name: ['', [Validators.required,Validators.pattern(this.LETTER_REGEX)]],
       birth_date: [[Validators.required]],
@@ -37,36 +40,36 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  userRegister(){
-    const userData: User = {
-      full_name: this.userRegisterForm.get('full_name')?.value,
-      birth_date: this.userRegisterForm.get('birth_date')?.value,
-      identification: this.userRegisterForm.get('identification')?.value,
-      id_date: this.userRegisterForm.get('id_date')?.value,
-      phone_number: this.userRegisterForm.get('phone_number')?.value,
-      email: this.userRegisterForm.get('email')?.value,
-      password: this.userRegisterForm.get('password')?.value,
-    }
-    this.user_service.postUser(userData).subscribe(data =>{
-        if(!data.message){
-          console.log(data.message);
-          console.log('Registro exitoso');
-        }
-                
-        console.log(userData);
-        console.log(data); 
-
-        const pocket: Pocket = {id_user: data._id}
-        this.pocket_service.postPocket(pocket).subscribe(data =>{
-          console.log("Bolsillo creado");
+  onUserRegister(form: any): void {
+    this.authService.register(form.value).subscribe(data => {
+      const pocket: Pocket = {id_user: data.dataUser._id}
+      this.pocket_service.postPocket(pocket).subscribe(data =>{
+          this.router.navigate(['/ingresar']);
+          Swal.fire({
+            icon: 'success',
+            title: 'Felicidaded! Bienvenido a PayMoon',
+            text: 'Tu Bolsillo ha sido creado Correctamente'
+          })
         }, error => {
-          console.log(error);
-          console.log("Error al crear el bolsillo")
+          Swal.fire({
+            icon: 'error',
+            title: 'Algo esta pasando con la creacion de su Bolsillo',
+            text: 'Comuniquese con el administrador'
+          })
         } );
-               
-      }, error =>{
-        console.log(error);
-        console.log("Hubo un error");
-    });
+      Swal.fire({
+        icon: 'success',
+        title: 'Felicidaded! Eres un nuevo usuario de PayMoon',
+        text: 'Te registraste correctamente'
+      })
+    }, error => {
+      Swal.fire({
+        icon: 'error',
+        title: 'Algo esta pasando',
+        text: 'Comuniquese con el administrador'
+      })
+    })
   }
+
+
 }
