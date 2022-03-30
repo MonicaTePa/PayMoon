@@ -13,9 +13,12 @@
         <p class="usuario-info-item"><span>Correo electrónico: </span>{{user_info?.email}}</p>
         <p class="usuario-info-item"><span>Contraseña: </span>••••••••••</p>
     </div>
-    <div class="user-register-info-button-panel">
-        <button class="button-panel-btn" routerLink="/miPerfil">Volver</button>
-        <button class="button-panel-btn" routerLink="/updateInfo">Actualizar</button>
-    </div>    
+		<div class="user-register-info-button-panel">
+			<button class="button-panel-btn" routerLink="/updateInfo">Actualizar</button>
+			<button class="button-panel-btn" (click)="deleteAccount(user_info?._id)">Borrar Cuenta</button>
+		</div>  
+		<div class="user-register-info-button-panel">
+			<button class="button-panel-btn" routerLink="/miPerfil">Volver</button>
+		</div>
 </div>
 

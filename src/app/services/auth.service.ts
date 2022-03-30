@@ -4,6 +4,7 @@ import { JwtResponse } from '../models/jwt.response';
 import { User } from '../models/user.model';
 import { tap } from 'rxjs';
 import { Observable, BehaviorSubject } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class AuthService {
   authSubject = new BehaviorSubject(false);
   private token: any;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private router: Router) { }
 
   register(user: User): Observable<JwtResponse>{
     return this.httpClient.post<JwtResponse>(`${this.AUTH_SERVER}/users`, user)
@@ -43,6 +44,10 @@ export class AuthService {
     this.token = '';
     localStorage.removeItem("ACCESS_TOKEN");
     localStorage.removeItem("EXPIRES_IN");
+    localStorage.removeItem("id");
+    localStorage.removeItem("pocket_id");
+    localStorage.removeItem("id_to_pay");
+    this.router.navigate(['/']);
   }
 
   private saveToken(token: string, expiresIn: string, id: any): void{
