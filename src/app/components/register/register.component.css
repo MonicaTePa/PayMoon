@@ -84,14 +84,7 @@ footer{
     margin: 0;
     padding: 0;
   }
-
-
-  /* .footer {
-    height: 20vh;
-    width: 100%;   
-    display: block;
-  } */
-
+  
   .card-body {
     height: fit-content;
   }
@@ -125,13 +118,6 @@ footer{
   .bottom {
     margin-bottom: 5vh;
   }
-
-/* 
-  .footer {
-    height:20vh;
-    width: 100%;  
-  } */
-
   .card-body {
     height: fit-content;
   }
@@ -205,9 +191,5 @@ footer{
   .card-body {
     height: fit-content;
   }
-
-  /* .footer {
-    height: 20vh;
-    width: 11vw;  
-  } */
+ 
 }
