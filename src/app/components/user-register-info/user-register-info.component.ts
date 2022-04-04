@@ -3,6 +3,7 @@ import { User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
 import { AuthService } from 'src/app/services/auth.service';
 import Swal from 'sweetalert2';
+import { GlobalConstants } from 'src/app/common/global-constants';
 
 @Component({
   selector: 'app-user-register-info',
@@ -12,9 +13,10 @@ import Swal from 'sweetalert2';
 export class UserRegisterInfoComponent implements OnInit {
 
   user_info : User | null = null;
-  user_id: any = localStorage.getItem("id");
+  // user_id: any = localStorage.getItem("id");
   user_birth_date: string | null = null;
   user_id_date: string | null = null;
+  user_id: string = new GlobalConstants().getUserId();
 
   constructor(private user_service: UserService, private auth_service: AuthService) { }
 

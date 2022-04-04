@@ -11,7 +11,8 @@ import Swal from 'sweetalert2';
 })
 export class UserPocketComponent implements OnInit {
 
-  user_id: any = localStorage.getItem("id");
+  // user_id: any = localStorage.getItem("id");
+  user_id: string = new GlobalConstants().getUserId();
   pocket_info: Pocket | null = null;
 
   constructor(private pocket_service: PocketService) { }

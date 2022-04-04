@@ -13,8 +13,9 @@ import Swal from 'sweetalert2';
 export class UpdateInfoComponent implements OnInit {
 
   //user_id: String = "623c1917b98cd2ec0b9e7fe3"
+  user_id: string = new GlobalConstants().getUserId();
   
-  user_id: any = localStorage.getItem("id");
+  // user_id: any = localStorage.getItem("id");
   userUpdateForm : FormGroup;
   user: User | null = null;
 

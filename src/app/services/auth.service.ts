@@ -25,8 +25,7 @@ export class AuthService {
           this.saveToken(res.dataUser.accessToken, res.dataUser.expiresIn, res.dataUser._id);
         }
       })
-    )
-
+    );
   }
 
   login(user: User): Observable<JwtResponse>{

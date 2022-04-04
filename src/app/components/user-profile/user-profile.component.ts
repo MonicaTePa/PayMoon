@@ -15,7 +15,8 @@ import Swal from 'sweetalert2';
 export class UserProfileComponent implements OnInit {
 
   user_info : User | null = null;  
-  user_id: any = localStorage.getItem("id");
+  // user_id: any = localStorage.getItem("id");
+  user_id: string = new GlobalConstants().getUserId();
 
   constructor( private user_service: UserService, private pocket_service: PocketService, private auth_service: AuthService, private router: Router ) { 
     

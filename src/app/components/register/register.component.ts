@@ -38,38 +38,106 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
   }
 
-  onUserRegister(form: any): void {
-    this.authService.register(form.value).subscribe(data => {
-      const pocket: Pocket = {id_user: data.dataUser._id}
-      this.pocket_service.postPocket(pocket).subscribe(data =>{
-          this.router.navigate(['/ingresar']);
-          Swal.fire({
-            icon: 'success',
-            title: 'Felicidaded! Bienvenido a PayMoon',
-            text: 'Tu Bolsillo ha sido creado Correctamente'
-          })
-        }, error => {
-          Swal.fire({
-            icon: 'error',
-            title: 'Algo esta pasando con la creacion de su Bolsillo',
-            text: 'Comuniquese con el administrador'
-          })
-        } );
-      Swal.fire({
-        icon: 'success',
-        title: 'Felicidaded! Eres un nuevo usuario de PayMoon',
-        text: 'Te registraste correctamente'
-      })
-    }, error => {
-      Swal.fire({
-        icon: 'error',
-        title: 'Algo esta pasando',
-        text: 'Comuniquese con el administrador'
-      })
-    })
-  }
+  // onUserRegister(form: any): void {
+  //   this.authService.register(form.value).subscribe(data => {
+  //     const pocket: Pocket = {id_user: data.dataUser._id}
+  //     this.pocket_service.postPocket(pocket).subscribe(data =>{
+  //         this.router.navigate(['/ingresar']);
+  //         Swal.fire({
+  //           icon: 'success',
+  //           title: 'Felicidaded! Bienvenido a PayMoon',
+  //           text: 'Tu Bolsillo ha sido creado Correctamente'
+  //         })
+  //       }, error => {
+  //         console.log(error)
+  //         Swal.fire({
+  //           icon: 'error',
+  //           title: 'Algo esta pasando con la creacion de su Bolsillo',
+  //           text: 'Comuniquese con el administrador'            
+  //         })
+  //       } );
+  //     Swal.fire({
+  //       icon: 'success',
+  //       title: 'Felicidaded! Eres un nuevo usuario de PayMoon',
+  //       text: 'Te registraste correctamente'
+  //     })
+  //   }, error =>
+  //    {console.log(error);
+  //     Swal.fire({
+  //       icon: 'error',
+  //       title: 'Algo esta pasando',
+  //       text: 'Comuniquese con el administrador'
+  //     });
+  //   });
+  // }
 
+  onUserRegister(): void{
+    
+    const user: User = {
+      full_name : this.userRegisterForm.get('full_name')?.value.toUpperCase(),
+      birth_date : this.userRegisterForm.get('birth_date')?.value,
+      identification : this.userRegisterForm.get('identification')?.value,
+      id_date : this.userRegisterForm.get('id_date')?.value,
+      phone_number : this.userRegisterForm.get('phone_number')?.value,
+      email : this.userRegisterForm.get('email')?.value.toLowerCase(),      
+      password : this.userRegisterForm.get('password')?.value
+    }
+    //  console.log(user);
+    this.user_service.postUser(user).subscribe(
+      data =>{
+        // console.log("registro exitoso", data);
+        if(data.code === 1){       
+          Swal.fire('Identificación ya registrada');
+        } else if(data.code === 2){
+          Swal.fire('Teléfono ya registrado');
+        } else if(data.code === 3){
+          Swal.fire('Email ya registrado');
+        } else {          
+          const user_id = data._id;
+          // console.log(user_id);
+          const pocket: Pocket = {id_user: user_id}
+          this.pocket_service.postPocket(pocket).subscribe(
+            data =>{   
+              // console.log(data) ;       
+              Swal.fire({
+                icon: 'success',
+                title: '¡Bienvenido a PayMoon!',
+                text: 'Tu bolsillo ha sido creado.'                
+              });
+              this.router.navigate(['/ingresar']);
+            }, error =>{
+              this.user_service.deleteUser(user_id).subscribe(
+                data =>{
+                  // console.log("Hubo un error", error);
+                  Swal.fire({
+                    icon: 'error',
+                    title: 'Algo esta pasando',
+                    text: 'Comuniquese con el administrador si persiste.'
+                  });
+                }, error =>{
+                  // console.log("Hubo un error", error);
+                  Swal.fire({
+                    icon: 'error',
+                    title: 'Algo esta pasando',
+                    text: 'Comuniquese con el administrador si persiste.'
+                  });
+                }
+              );
+            }
+          );
+        }
+      }, error =>{
+        // console.log("Hubo un error", error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Algo esta pasando',
+          text: 'Comuniquese con el administrador si persiste.'
+        });
+      }
+    );
+  }
 
 }

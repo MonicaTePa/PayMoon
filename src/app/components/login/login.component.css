@@ -1,10 +1,28 @@
-.container-fluid {
-  min-height: 100%;
-  background-image: url(/assets/img/login/Template-16.png) !important;
-  background-repeat: initial;
-  background-size: 90vw 100vh;
-  image-rendering: auto;
+.background{
+  z-index: -10;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/assets/img/user-register-info/desktop-background2.png');
+  background-image: center;
+  position: fixed;
+  background-size: cover;  
+}
+
+.container-fluid { 
   margin-bottom: 2%;
+}
+
+header{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+  background-color: white;
+}
+
+.login-container{
+  margin-top: 150px;
+  height: 115vh;
 }
 
 .shado {
@@ -57,8 +75,7 @@ a {
 }
 
 
-.footer {
-  padding-top: 9%;
+.footer { 
   position: absolute;
   width: 100%;
 }
@@ -73,17 +90,34 @@ a {
 }
 
 
+
+@media only screen and (max-width: 500px){
+  input{
+    font-size: small;
+  }
+
+  .background{
+   
+    background-image: url('/assets/img/user-register-info/mobile-background1.png');
+     
+  }
+
+
+}
+
+
+
 @media only screen and (min-width: 1000px) {
   h2 {
     font-family: 'Raleway', sans-serif;
     font-size: 5vh;
   }
 
-  .container-fluid {
-    background-image: url(/assets/img/login/mobile-background-1.png);
+  /* .container-fluid {
+     background-image: url(/assets/img/login/mobile-background-1.png); 
     background-size: 110vw 100vh;
-    background-repeat: no-repeat;
-  }
+    background-repeat: no-repeat; 
+  } */
 }
 
 @media only screen and (min-width: 1500px) {
@@ -97,12 +131,7 @@ a {
     font-size: 2vw;
   }
 
-  .container-fluid {
-    min-height: 100%;
-    background-image: url(/assets/img/login/Template-16.png);
-    background-repeat: initial;
-    background-size: 90vw 100vh;
-    image-rendering: auto;
+  .container-fluid {    
     margin-bottom: 2vh;
   }
 }

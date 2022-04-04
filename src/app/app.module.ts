@@ -25,6 +25,7 @@ import { UpdateInfoComponent } from './components/update-info/update-info.compon
 import { LegalComponent } from './components/legal/legal.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { CardCollectionComponent } from './components/card-collection/card-collection.component';
 
 
 
@@ -49,7 +50,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     UpdateInfoComponent,   
     NavbarComponent,
     AboutUsComponent,
-    LegalComponent 
+    LegalComponent,
+    CardCollectionComponent 
   ],
   imports: [
     BrowserModule,

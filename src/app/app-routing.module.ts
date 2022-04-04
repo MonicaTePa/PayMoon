@@ -17,13 +17,14 @@ import { UpdateInfoComponent } from './components/update-info/update-info.compon
 import { LegalComponent } from './components/legal/legal.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { NavbarComponent } from './components/navbar/navbar.component'
+import { CardCollectionComponent } from './components/card-collection/card-collection.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path: 'miCuenta', component: UserDesktopComponent},
   {path: 'miPerfil', component: UserProfileComponent},
   {path: 'informacionUsuario', component: UserRegisterInfoComponent},
-  {path: 'misTarjetas', component: CardsComponent}, 
+  {path: 'misTarjetas', component: CardCollectionComponent}, 
   {path: 'agregarTarjeta', component: AddCardComponent},
   {path: 'miBolsillo',component:UserPocketComponent},
   {path: 'transacciones', component: TransfersComponent },

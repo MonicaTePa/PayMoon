@@ -1,0 +1,22 @@
+<div class="background"></div>
+<app-user-navbar></app-user-navbar>
+<div class="body">   
+    <div class="content-container"> 
+
+        <div class="btn-aux-div1"><button class="add-btn" routerLink="/agregarTarjeta">Añadir tarjeta</button></div>            
+        <p>MIS TARJETAS</p>        
+        <div class="cards-container">
+            <div *ngFor="let item of card_list" class="cardInfo-container">
+                <div class="info-div">
+                    <p class="cardInfo-item">Nombre: <span>{{item.card_name}}</span></p>
+                    <p class="cardInfo-item">Número: <span>{{item.card_number}}</span></p>
+                </div> 
+                <div class="delete-icon" (click)="removeCard(item?._id)">
+                    <img src="/assets/img/card-collection/remove.png" alt="delete-icon">
+                </div>               
+            </div>           
+        </div>
+        <div class="btn-aux-div2"><button class="add-btn" routerLink="/miPerfil">Volver</button></div>       
+    </div>
+</div>
+

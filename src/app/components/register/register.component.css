@@ -1,3 +1,36 @@
+.background{
+  z-index: -10;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/assets/img/user-desktop/desktop-background.png');
+  background-image: center;
+  position: fixed;
+  background-size: cover;  
+}
+
+.register-form-container{
+  width: 100vw;  
+}
+
+header{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+  background-color: white;
+}
+
+.form-div{
+  margin-top: 180px;
+  z-index: -1;
+}
+
+.register-form-container{
+  height: 180vh;
+  width: 100vw;
+}
+
+
 .card-body {
   background: #6a11cb;
   background: -webkit-linear-gradient(to right, rgba(57, 39, 208, 1), rgba(103, 63, 215, 1));
@@ -19,7 +52,11 @@
   height: 20%;
 }
 
-@media only screen and (min-width: 300px) {
+footer{
+  width: 100%;
+}
+
+@media only screen and (max-width: 300px) {
   h2 {
     font-family: 'Raleway', sans-serif;
     font-size: 5vh;
@@ -42,20 +79,31 @@
     margin-bottom: 5vh;
   }
 
-
-  .footer {
-    padding-top: 140%;
+  footer{
     width: 100%;
-    position: absolute;
+    margin: 0;
+    padding: 0;
   }
+
+
+  /* .footer {
+    height: 20vh;
+    width: 100%;   
+    display: block;
+  } */
 
   .card-body {
     height: fit-content;
+  }
+
+  input{
+    font-size: small;
   }
 
 }
 
-@media only screen and (min-width: 580px) {
+@media only screen and (max-width: 580px) {
+  
   h2 {
     font-family: 'Raleway', sans-serif;
     font-size: 5vh;
@@ -78,15 +126,18 @@
     margin-bottom: 5vh;
   }
 
-
+/* 
   .footer {
-    padding-top: 68%;
-    width: 100%;
-    position: absolute;
-  }
+    height:20vh;
+    width: 100%;  
+  } */
 
   .card-body {
     height: fit-content;
+  }
+
+  input{
+    font-size: small;
   }
 
 }
@@ -115,9 +166,8 @@
   }
 
   .footer {
-    padding-top: 43%;
-    width: 100%;
-    position: absolute;
+    height:20vh;
+    width: 100%;   
   }
 
   .card-body {
@@ -156,9 +206,8 @@
     height: fit-content;
   }
 
-  .footer {
-    padding-top: 20%;
-    width: 100%;
-    position: absolute;
-  }
+  /* .footer {
+    height: 20vh;
+    width: 11vw;  
+  } */
 }

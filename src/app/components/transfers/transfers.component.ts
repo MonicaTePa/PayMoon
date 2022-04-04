@@ -9,6 +9,7 @@ import { PocketService } from 'src/app/services/pocket.service';
 import { Pocket } from 'src/app/models/pocket.model';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { GlobalConstants } from 'src/app/common/global-constants';
 
 @Component({
   selector: 'app-transfers',
@@ -17,8 +18,10 @@ import Swal from 'sweetalert2';
 })
 export class TransfersComponent implements OnInit {
 
-  user_id: any = localStorage.getItem("id");
+  // user_id: any = localStorage.getItem("id");
   pocket_id: any = localStorage.getItem("pocket_id");
+  
+  user_id: string = new GlobalConstants().getUserId();
 
 
 

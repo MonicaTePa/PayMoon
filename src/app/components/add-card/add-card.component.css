@@ -1,14 +1,29 @@
-.page-addCard-container {
-  display: block;
+.main-container{
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.page-addCard-container {
+  margin-top: 10px;  
+  display: block;
+  width: 40%;
+  border-radius: 10px;
+  box-shadow: 0 0 30px #b366da; 
+  background-color: #ffffff9f;
+  padding-bottom: 10px; 
 }
 
 .title-page {
-  font-size: xx-large;
+  font-size: x-large;
   font-weight: 700;
   color: #3927D0;
   margin: 20px;
   text-align: center;
+  font-family: 'Raleway', sans-serif;      
 }
 
 .form-card {
@@ -27,7 +42,10 @@
     background-image: url('../../../assets/img/user-register-info/desktop-background2.png');
     background-size: cover;
     background-position: center;
-  }
+    }
+
+    
+  
 }
 
 @media only screen and (max-width: 800px){
@@ -39,6 +57,27 @@
     background-image: url('../../../assets/img/user-register-info/mobile-background1.png');
     background-size: cover;
     background-position: center;
+  }
+
+  .page-addCard-container {    
+    width: 80%;  
+    padding-bottom: 10px; 
+  }
+
+  .title-page{
+    font-size: large;
+  }
+
+  input{
+    font-size: small;
+  }
+
+  label{
+    font-size: small;
+  }
+
+  select option{
+    font-size: small;
   }
 }
 

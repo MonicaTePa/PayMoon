@@ -1,3 +1,31 @@
+.background{
+  z-index: -10;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/assets/img/user-register-info/desktop-background2.png');
+  background-image: center;
+  position: fixed;
+  background-size: cover;  
+}
+
+app-user-navbar{
+  position: fixed;
+  top:0;
+  background-color: #ffffffb6;
+  z-index: 1;
+}
+
+.container-fluid{
+  margin-top: 130px;
+}
+
+button{
+  margin:5px;
+}
+/* .main-container{
+  height: 50vh;
+} */
+
 .card-body{
     background: #6a11cb;
     background: -webkit-linear-gradient(to right, rgba(57, 39, 208, 1), rgba(103, 63, 215, 1));
@@ -8,7 +36,7 @@
   .shado{
     -webkit-box-shadow: 0px 2px 35px 50px #8F58D3; 
     box-shadow: 0px 2px 50px 11px #8F58D3;
-    height: 110vh;
+    height: auto;
   }
   
   .login{
@@ -24,19 +52,21 @@
     h2 {
       font-family: 'Raleway', sans-serif;
       font-size: 5vh;
+      
     }
   
     .container-fluid {
-      min-height: 100%;
-      background-image: url(/assets/img/login/Template-16.png);
-      background-size: 110vw 100vh;
-      background-repeat: no-repeat;
+      min-height: 1000;      
+    }
+
+    .main-container{
+      height: 50vh;
     }
   
     .shado{
       -webkit-box-shadow: 0px 2px 35px 50px #8F58D3; 
       box-shadow: 0px 2px 50px 11px #8F58D3;
-      height: 135vh;
+      height: auto;
     }
   
     .bottom{
@@ -44,6 +74,32 @@
     }
   
     
+  }
+
+  @media only screen and (max-width: 500px){
+
+    h2{
+      font-weight: lighter;
+    }
+
+    input{
+      font-size: small;
+    }
+  
+    .background{
+     
+      background-image: url('/assets/img/user-register-info/mobile-background1.png');
+       
+    }
+
+    button{
+      font-size: medium;
+    }
+  
+    .main-container{
+      height: 50vh;
+    }
+  
   }
   
   @media only screen and (min-width: 1500px) {
@@ -58,16 +114,15 @@
     }
   
     .container-fluid {
-      min-height: 100%;
-      background-image: url(/assets/img/login/Template-16.png);
-      background-repeat: initial;
-      background-size: 90vw 100vh;
-      image-rendering: auto;
+      min-height: 100%;          
       margin-bottom: 10%;
     }
     .shado{
       -webkit-box-shadow: 0px 2px 35px 50px #8F58D3; 
       box-shadow: 0px 2px 50px 11px #8F58D3;
       height: auto;
+    }
+    .main-container{
+      height: 50vh;
     }
   }

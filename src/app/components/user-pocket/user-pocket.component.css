@@ -1,7 +1,13 @@
-<<<<<<< HEAD
-=======
+app-user-navbar{
+  position:fixed;
+  top: 0;
+}
 
->>>>>>> 8b8cbc10c8b78b31ab7b46f8720dbc4a27168bce
+.user-pocket-container{
+  margin-top: 160px;
+}
+
+
 @media only screen and (max-width: 760px) {
   .background {
     width: 100vw;
@@ -14,6 +20,7 @@
   }
 
   .user-pocket-container {
+    margin-top: 100px;
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -123,7 +130,7 @@
     max-width: 380px;
   }
   .user-pocket-container{
-    margin-top: 10%;
+    margin-top: 160px;
     margin-bottom: 10%;
   }
   .footer {
@@ -255,8 +262,8 @@
   .user-pocket-container .user-pocket-button:hover {
     background-color: #3927d0;
   }
-  .user-pocket-container{
-    margin-top: 5%;
+ .user-pocket-container{
+    margin-top: 160px;
     margin-bottom: 5%;
   }
   .footer {
