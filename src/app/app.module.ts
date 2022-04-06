@@ -29,6 +29,8 @@ import { CardCollectionComponent } from './components/card-collection/card-colle
 
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,8 +61,13 @@ import { CardCollectionComponent } from './components/card-collection/card-colle
     ReactiveFormsModule,
     HttpClientModule,
     
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+function routes(routes: any, arg1: { onSameUrlNavigation: "reload"; }): any[] | import("@angular/core").Type<any> | import("@angular/core").ModuleWithProviders<{}> {
+  throw new Error('Function not implemented.');
+}
+

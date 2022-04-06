@@ -58,7 +58,7 @@ export class AddCardComponent implements OnInit {
           hideClass: {
             popup: 'animate__animated animate__fadeOutUp'
         }})         
-        console.log("Hubo un error",error);
+        // console.log("Hubo un error",error);
       }
     );
   }
@@ -88,6 +88,11 @@ export class AddCardComponent implements OnInit {
               title: 'Tarjeta registrada',
               text: 'Su tarjeta ha sido registrada exitosamente',              
             })  
+            const currentRoute = this.router.url;
+
+            this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+                this.router.navigate([currentRoute]); // navigate to same route
+            });
           }else if (data.code === 1){
             Swal.fire('La tarjeta ya está registrada en el sistema');
           }

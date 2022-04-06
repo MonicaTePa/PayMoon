@@ -43,57 +43,54 @@ export class UpdateInfoComponent implements OnInit {
           password_again: this.user?.password
         })
         // console.log(this.user)
+        // console.log("current user",this.user)
       }, error =>{
-        console.log('Hubo un error')
-        console.log(error)
+        // console.log('Hubo un error');
+        // console.log(error);
+        Swal.fire(
+          'Lo sentimos',
+          'Error en el sistema. Intétalo más tarde o comunícate con administración si persiste.',
+          'error'
+        );
+        
       }
     );
   }
-
-  updateUser(){
-    if(this.user){
-      console.log(this.user)
-      const userUpdate: User ={
-        full_name: this.user?.full_name,
-        identification: this.user?.full_name,
-        birth_date: this.user?.birth_date,
-        id_date: this.user?.id_date, 
-        phone_number: this.userUpdateForm.get('phone_number')?.value,    
-        email: this.userUpdateForm.get('email')?.value,
-        password: this.userUpdateForm.get('password')?.value,
-      }     
-      console.log(userUpdate);
-      this.user_service.updateUser(this.user_id,userUpdate).subscribe(
-        data =>{
-          console.log(data);
-          if(data.answer === "OK"){
-            Swal.fire({
-              title: data.message,
-              showClass: {
-                popup: 'animate__animated animate__fadeInDown'
-              },
-              hideClass: {
-                popup: 'animate__animated animate__fadeOutUp'
-              }
-            })
+  
+  updateUser(): void{
+    if (this.userUpdateForm.get('password')?.value === this.userUpdateForm.get('password_again')?.value){
+      const userUpdate = this.user;
+      if(userUpdate){
+        userUpdate.phone_number = this.userUpdateForm.get('phone_number')?.value;
+        userUpdate.email = this.userUpdateForm.get('email')?.value.toLowerCase();
+        userUpdate.password = this.userUpdateForm.get('password')?.value;
+        // console.log("Datos actualizados", userUpdate);
+        this.user_service.updateUser(this.user_id, userUpdate).subscribe(
+          data =>{
+            if(data.code === 1){
+              Swal.fire('Teléfono no disponible');
+            }else if (data.code === 2){
+              Swal.fire('Correo electrónico no disponible');
+            }else if(data.code === 0){
+              Swal.fire(
+                'Actualización exitosa',
+                'Tus datos se actualizaron correctamente.',
+                'success'
+              );
+            }
+          }, error =>{
+            Swal.fire(
+              'Lo sentimos',
+              'Error en el sistema. Intétalo más tarde o comunícate con administración si persiste.',
+              'error'
+            );
           }
-        }, error =>{
-          Swal.fire({
-            title: 'Lo sentimos',            
-            text: 'Error en el Sistema. Inténtalo más tarde',   
-            icon: 'error',             
-            showClass: {
-              popup: 'animate__animated animate__fadeInDown'
-            },
-            hideClass: {
-              popup: 'animate__animated animate__fadeOutUp'
-          }}) 
-          console.log('Hubo un error')
-          console.log(error)
-        }
-      );
-    }
-    
+        );
+
+      }      
+    } else {
+      Swal.fire('Las contraseñas no coinciden');           
+    } 
   }
 
 }

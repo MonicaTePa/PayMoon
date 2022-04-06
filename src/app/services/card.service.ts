@@ -27,9 +27,7 @@ export class CardService {
 
   putCard(id: String,card: Card): Observable<any>{
     return this.http.post(`${this.API_URL}/${this.USER_URI}`, card);
-  }
-
-  
+  }  
 
   deleteCard( id:String ): Observable<any>{
     return this.http.delete(`${this.API_URL}/${this.USER_URI}/${id}`);
