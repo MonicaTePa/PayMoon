@@ -27,8 +27,8 @@ export class UserPocketComponent implements OnInit {
         this.pocket_info = data;
       },
       error => {
-        console.log("Hubo un error");
-        console.log(error);
+       /*  console.log("Hubo un error");
+        console.log(error); */
         Swal.fire({
           title: 'Lo sentimos',
           text: 'Error en el Sistema. Inténtalo más tarde',   

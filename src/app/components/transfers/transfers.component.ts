@@ -10,6 +10,7 @@ import { Pocket } from 'src/app/models/pocket.model';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { GlobalConstants } from 'src/app/common/global-constants';
+import { OperationService } from 'src/app/services/operation.service';
 
 @Component({
   selector: 'app-transfers',
@@ -33,7 +34,7 @@ export class TransfersComponent implements OnInit {
 
   numbersRegex = /^[0-9]+$/;  
   
-  constructor(private fb: FormBuilder, private user_service: UserService, private transaction_service: TransactionService, private card_service: CardService, private pocket_service: PocketService, private router: Router) { 
+  constructor(private fb: FormBuilder, private user_service: UserService, private transaction_service: TransactionService, private card_service: CardService, private pocket_service: PocketService, private operation_service: OperationService, private router: Router) { 
     this.transferRegisterForm = this.fb.group({
       id_card: [[Validators.required]],
       receiver_phone: ['',[Validators.required, Validators.pattern(this.numbersRegex)]],
@@ -50,13 +51,23 @@ export class TransfersComponent implements OnInit {
       data =>{        
         this.card_list =  data;
       },error =>{
-        console.log("Error")
-        console.log(error);
+        Swal.fire({
+          title: 'Lo sentimos',
+          text: 'Error en el Sistema. Inténtalo más tarde o comunícate con administración si persiste',   
+          icon: 'error',             
+          showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+          },
+          hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+        }}); 
+        /* console.log("Error")
+        console.log(error); */
       }
     );
   }
 
-  makeTransfer(){
+  /* makeTransfer(){
     const phone_number = this.transferRegisterForm.get('receiver_phone')?.value
     const transfer_amount = this.transferRegisterForm.get('amount')?.value
     const id_card = this.transferRegisterForm.get('id_card')?.value
@@ -75,8 +86,8 @@ export class TransfersComponent implements OnInit {
             id_payer: this.user_id,
             id_receiver: id_receiver,
             amount: transfer_amount,
-            type: id_card == "none"?"Bolsillo":"Tarjeta",
-            id_card: id_card == "none"?"No aplica":id_card
+            type: id_card === "none"?"BOLSILLO":"TARJETA",
+            id_card: id_card === "none"?"NO APLICA":id_card
           }
           this.transaction_service.postTransaction(transaction).subscribe(
             DataTransfer =>{
@@ -138,6 +149,72 @@ export class TransfersComponent implements OnInit {
 
    
   
+  } */
+
+  makeTransfer(){
+    const phone_number = this.transferRegisterForm.get('receiver_phone')?.value
+    const transfer_amount = parseInt(this.transferRegisterForm.get('amount')?.value);
+    const id_card = this.transferRegisterForm.get('id_card')?.value       
+    
+    this.user_service.getUserByPhone(phone_number).subscribe(
+      data =>{
+        if(data.code === 1){
+          Swal.fire('El teléfono ingresado no está registrado en PayMoon');
+        }else{
+          Swal.fire({
+            title: '¿Está seguro de esta tranferencia?',  
+            text:`Usted tranferirá $${transfer_amount.toLocaleString()} al usuario con teléfono ${phone_number}`,    
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#673FD7',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Hacer transferencia',
+            cancelButtonText: 'Cancelar'
+      
+          }).then((result) => {
+            const id_receiver: string = data;
+          //console.log(id_receiver);
+          const transaction : Transaction = {            
+            id_payer: this.user_id,
+            id_receiver: id_receiver,
+            amount: transfer_amount,
+            type: id_card === "none"?"BOLSILLO":"TARJETA",
+            id_card: id_card === "none"?"NO APLICA":id_card
+          }
+          //console.log(transaction);
+          this.operation_service.makeTranference(transaction).subscribe(
+            data =>{
+              //console.log(data);
+              if(data.code === 1){
+                Swal.fire('No tiene en el bolsillo el dinero suficiente para esta transacción');
+              }else if(data.code === 0){
+                Swal.fire({
+                  title: 'Transacción exitosa',
+                  text: `El dinero fue correctamente transferido al usuario con teléfono ${phone_number}`,   
+                  icon: 'success'
+                });
+              }              
+            }, error =>{
+              //console.log(error);
+              Swal.fire({
+                title: 'Lo sentimos',
+                text: 'Error en el Sistema. Inténtalo más tarde o comunícate con administración si persiste',   
+                icon: 'error'
+              });
+            }
+          );
+      
+          });
+          
+        }        
+      },error =>{
+        Swal.fire({
+          title: 'Lo sentimos',
+          text: 'Error en el Sistema. Inténtalo más tarde o comunícate con administración si persiste',   
+          icon: 'error'
+        });
+      }
+    );
   }
 
 }

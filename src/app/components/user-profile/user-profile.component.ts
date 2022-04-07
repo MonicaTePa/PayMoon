@@ -30,10 +30,15 @@ export class UserProfileComponent implements OnInit {
     this.user_service.getUserById(this.user_id).subscribe(
       data=>{
         this.user_info = data;        
-        console.log(this.user_info);
+        /* console.log(this.user_info); */
       },error=>{
-        console.log("Hubo un error");
-        console.log(error);
+        /* console.log("Hubo un error");
+        console.log(error); */
+        Swal.fire({
+          title: 'Lo sentimos',
+          text: 'Error en el Sistema. Inténtalo más tarde o comunícate con administración si persiste',   
+          icon: 'error'
+        });
       }
     );
     this.pocket_service.getPocketById(this.user_id).subscribe(

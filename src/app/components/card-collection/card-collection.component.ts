@@ -40,8 +40,8 @@ export class CardCollectionComponent implements OnInit {
           },
           hideClass: {
             popup: 'animate__animated animate__fadeOutUp'
-        }})         
-        console.log("Hubo un error",error);
+        }});         
+        /* console.log("Hubo un error",error); */
       }
     );
   }
