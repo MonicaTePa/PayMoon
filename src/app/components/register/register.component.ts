@@ -140,4 +140,66 @@ export class RegisterComponent implements OnInit {
     );
   }
 
+  signup():void {
+    const user: User = {
+      full_name : this.userRegisterForm.get('full_name')?.value.toUpperCase(),
+      birth_date : this.userRegisterForm.get('birth_date')?.value,
+      identification : this.userRegisterForm.get('identification')?.value,
+      id_date : this.userRegisterForm.get('id_date')?.value,
+      phone_number : this.userRegisterForm.get('phone_number')?.value,
+      email : this.userRegisterForm.get('email')?.value.toLowerCase(),      
+      password : this.userRegisterForm.get('password')?.value
+    }
+    this.user_service.signupUser(user).subscribe(
+      data =>{
+        if(data.code === 1){       
+          Swal.fire('Identificación ya registrada');
+        } else if(data.code === 2){
+          Swal.fire('Teléfono ya registrado');
+        } else if(data.code === 3){
+          Swal.fire('Email ya registrado');
+        } else {          
+          const user_id = data._id;
+          // console.log(user_id);
+          const pocket: Pocket = {id_user: user_id}
+          this.pocket_service.postPocket(pocket).subscribe(
+            data =>{   
+              // console.log(data) ;       
+              Swal.fire({
+                icon: 'success',
+                title: '¡Bienvenido a PayMoon!',
+                text: 'Tu bolsillo ha sido creado.'                
+              });
+              this.router.navigate(['/ingresar']);
+            }, error =>{
+              this.user_service.deleteUser(user_id).subscribe(
+                data =>{
+                  // console.log("Hubo un error", error);
+                  Swal.fire({
+                    icon: 'error',
+                    title: 'Algo esta pasando',
+                    text: 'Comuniquese con el administrador si persiste.'
+                  });
+                }, error =>{
+                  // console.log("Hubo un error", error);
+                  Swal.fire({
+                    icon: 'error',
+                    title: 'Algo esta pasando',
+                    text: 'Comuniquese con el administrador si persiste.'
+                  });
+                }
+              );
+            }
+          );
+        }
+      }, error =>{
+        Swal.fire({
+          icon: 'error',
+          title: 'Algo esta pasando',
+          text: 'Comuniquese con el administrador si persiste.'
+        });
+      }
+    );
+  }
+
 }

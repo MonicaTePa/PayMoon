@@ -14,7 +14,8 @@
                 <p class="text-white-50 mb-5"> Registra tus datos</p>             
               </section>
 
-              <form [formGroup] = "userRegisterForm" (ngSubmit)="onUserRegister()">
+              <!-- <form [formGroup] = "userRegisterForm" (ngSubmit)="onUserRegister()"> -->
+              <form [formGroup] = "userRegisterForm" (ngSubmit)="signup()">
                 <div class="form-outline form-white mb-4">
                   <input formControlName="full_name" type="text" id="typeEmailX" placeholder="Nombre"
                     class="form-control form-control-lg" />  

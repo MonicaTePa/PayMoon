@@ -41,6 +41,7 @@ export class DepositsComponent implements OnInit {
   loadCards(){
     this.card_service.getCardsByUserId(this.user_id).subscribe(
       data =>{  
+        this.card_list =  data.data;
         if(data.answer === "OK"){
           Swal.fire({
             title: data.message,
@@ -52,8 +53,7 @@ export class DepositsComponent implements OnInit {
               popup: 'animate__animated animate__fadeOutUp'
             }
           });
-        }   
-        this.card_list =  data;
+        }  
         // console.log(this.card_list)
       },error =>{
         Swal.fire({
@@ -109,7 +109,7 @@ export class DepositsComponent implements OnInit {
                 Swal.fire(
                   'Recarga exitosa',
                   `Usted depositó $${deposit.amount.toLocaleString()} en su bolsillo PayMoon `,
-                  'question'
+                  'success'
                 )
               }
             }, error =>{

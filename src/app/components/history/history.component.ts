@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 import { TransactionService } from 'src/app/services/transaction.service';
 import { Transference } from 'src/app/models/transference.model';
+import { GlobalConstants } from 'src/app/common/global-constants';
 
 @Component({
   selector: 'app-history',
@@ -10,7 +11,8 @@ import { Transference } from 'src/app/models/transference.model';
 })
 export class HistoryComponent implements OnInit {
 
-  user_id: string = "623c1917b98cd2ec0b9e7fe3"  
+  // user_id: string = "623c1917b98cd2ec0b9e7fe3"  
+  user_id: string = new GlobalConstants().getUserId();
   transference_list : Transference[] = [];
 
   constructor( private user_service: UserService, private transaction_service: TransactionService) { }

@@ -49,7 +49,7 @@ export class TransfersComponent implements OnInit {
   loadCards(){
     this.card_service.getCardsByUserId(this.user_id).subscribe(
       data =>{        
-        this.card_list =  data;
+        this.card_list =  data.data;
       },error =>{
         Swal.fire({
           title: 'Lo sentimos',

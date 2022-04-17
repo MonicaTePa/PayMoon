@@ -6,6 +6,7 @@ import { PocketService } from 'src/app/services/pocket.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { CookieService}  from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-user-profile',
@@ -18,7 +19,7 @@ export class UserProfileComponent implements OnInit {
   // user_id: any = localStorage.getItem("id");
   user_id: string = new GlobalConstants().getUserId();
 
-  constructor( private user_service: UserService, private pocket_service: PocketService, private auth_service: AuthService, private router: Router ) { 
+  constructor( private user_service: UserService, private pocket_service: PocketService, private auth_service: AuthService, private router: Router, private cookie_service: CookieService) { 
     
   }
 
@@ -41,11 +42,11 @@ export class UserProfileComponent implements OnInit {
         });
       }
     );
-    this.pocket_service.getPocketById(this.user_id).subscribe(
-      data=>{
-        localStorage.setItem("pocket_id", data._id);
-      }
-    )
+    // this.pocket_service.getPocketById(this.user_id).subscribe(
+    //   data=>{
+    //     localStorage.setItem("pocket_id", data._id);
+    //   }
+    // )
   }
 
   onLogOut(){
@@ -59,11 +60,13 @@ export class UserProfileComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         this.auth_service.logout();
+        this.cookie_service.delete('jwt');
+        sessionStorage.removeItem('user');      
         Swal.fire({
           icon: 'success',
           title: 'Vuelve Pronto!',
           timer: 2000
-        });
+        });        
       }
     })
   }

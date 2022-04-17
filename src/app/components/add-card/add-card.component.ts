@@ -45,8 +45,9 @@ export class AddCardComponent implements OnInit {
   loadCards(){
     this.card_service.getCardsByUserId(this.user_id).subscribe(
       data =>{ 
-        this.card_list =  data;
-        // console.log(this.card_list)
+        this.card_list =  data.data;
+        // console.log(this.card_list.length);
+
       },error =>{
         Swal.fire({
           title: 'Lo sentimos',

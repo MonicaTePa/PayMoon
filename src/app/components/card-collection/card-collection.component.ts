@@ -25,8 +25,8 @@ export class CardCollectionComponent implements OnInit {
   loadCards(){
     this.card_service.getCardsByUserId(this.user_id).subscribe(
       data =>{ 
-        this.card_list =  data;     
-        // console.log(this.card_list)
+        this.card_list =  data.data;     
+        
         if(this.card_list.length === 0){
           Swal.fire('No tiene tarjetas registradas');         
         }
