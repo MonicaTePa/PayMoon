@@ -28,8 +28,9 @@ export class LoginComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    // this.cookie_service.delete('jwt');
+    // sessionStorage.removeItem('user');
   }
-
 
   onLoginUser(form: any): void{
     this.authService.login(form.value).subscribe(res => {

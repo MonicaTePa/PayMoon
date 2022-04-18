@@ -62,6 +62,8 @@ export class UserService {
     }
     return this.http.post(`${this.API_URL}/${this.AUTH_URI}/login`, loginInfo );
   }
-  
-   
+
+  checkUser( id: string): Observable<any>{
+    return this.http.get(`${this.API_URL}/${this.AUTH_URI}/checkUser/${id}`, {withCredentials: true});
+  }    
 }

@@ -18,24 +18,25 @@ import { LegalComponent } from './components/legal/legal.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { NavbarComponent } from './components/navbar/navbar.component'
 import { CardCollectionComponent } from './components/card-collection/card-collection.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
-  {path: 'miCuenta', component: UserDesktopComponent},
-  {path: 'miPerfil', component: UserProfileComponent},
-  {path: 'informacionUsuario', component: UserRegisterInfoComponent},
-  {path: 'misTarjetas', component: CardCollectionComponent}, 
-  {path: 'agregarTarjeta', component: AddCardComponent},
-  {path: 'miBolsillo',component:UserPocketComponent},
-  {path: 'transacciones', component: TransfersComponent },
-  {path: 'historial', component: HistoryComponent },
+  {path: 'miCuenta', component: UserDesktopComponent, canActivate: [AuthGuard]},
+  {path: 'miPerfil', component: UserProfileComponent, canActivate: [AuthGuard]},
+  {path: 'informacionUsuario', component: UserRegisterInfoComponent, canActivate: [AuthGuard]},
+  {path: 'misTarjetas', component: CardCollectionComponent, canActivate: [AuthGuard]}, 
+  {path: 'agregarTarjeta', component: AddCardComponent, canActivate: [AuthGuard]},
+  {path: 'miBolsillo',component:UserPocketComponent, canActivate: [AuthGuard]},
+  {path: 'transacciones', component: TransfersComponent, canActivate: [AuthGuard] },
+  {path: 'historial', component: HistoryComponent, canActivate: [AuthGuard] },
   {path: 'ingresar', component: LoginComponent },
-  {path: 'depositos', component: DepositsComponent },
-  {path: 'registro', component: RegisterComponent },
-  {path: 'updateInfo', component: UpdateInfoComponent},
-  {path: 'legal', component: LegalComponent }, 
+  {path: 'depositos', component: DepositsComponent, canActivate: [AuthGuard]},
+  {path: 'registro', component: RegisterComponent},
+  {path: 'updateInfo', component: UpdateInfoComponent, canActivate: [AuthGuard]},
+  {path: 'legal', component: LegalComponent, canActivate: [AuthGuard] }, 
   {path: 'paymoon', component: AboutUsComponent },
-  {path: 'updateInfo', component: UpdateInfoComponent},
+  {path: 'updateInfo', component: UpdateInfoComponent, canActivate: [AuthGuard]},
   { path: '**', component: Page404Component },
 ];
 
