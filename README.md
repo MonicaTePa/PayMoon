@@ -1,8 +1,11 @@
 # Frontend de la aplicación PAYMOON
+Development of the frontend of the PayMoon web application, an application for electronic payments and money transactions.
+This project was developed as a final project of the FullSatck Development Bootcamp at BIT (Bogota Institute of Technology). It is implemented with Angular 13, Bootstrap 5 and sweetalert2.
 
-Historias de usuario: https://saghir.atlassian.net/jira/software/projects/PAYM/boards/1/backlog?selectedIssue=PAYM-1
+Backend repository: https://github.com/MonicaTePa/PayMoonBackend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
+Preview video: https://drive.google.com/file/d/1bZd66k2prU2ZepRoMX7kRJcHRPBspRn1/view?usp=sharing
+
 
 ## Development server
 
